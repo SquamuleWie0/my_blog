@@ -4,6 +4,7 @@ import sidebar from './sidebar.js';
 export default defineConfig({
   title: 'wie0的博客',
   description: '记录学习笔记、项目经验与技术总结的博客',
+  base: '/my_blog/',
 
   themeConfig: {
     nav: [
@@ -16,7 +17,7 @@ export default defineConfig({
     sidebar,
     lastUpdated: true,
     editLink: {
-      pattern: 'https://github.com/wie0/my_blog/edit/main/docs/:path',
+      pattern: 'https://github.com/SquamuleWie0/my_blog/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页'
     }
   }
