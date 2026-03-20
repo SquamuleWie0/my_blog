@@ -1,0 +1,51 @@
+.VPHomeHero .name {
+  font-size: 40px !important;
+}
+
+.VPHomeHero .text {
+  font-size: 22px !important;
+}
+
+.VPHomeHero .tagline {
+  font-size: 16px !important;
+}
+
+/* 1️⃣ 整体内容往中间收一点 */
+.VPHomeHero .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 2️⃣ 头像下移 */
+.VPHomeHero .image {
+  margin-top: 50px;
+}
+
+/* 3️⃣ 头像变圆形 + 控制大小 */
+.VPHomeHero .image img {
+  border-radius: 50%;
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+}
+
+/* 4️⃣ 让文字更居中一点 */
+.VPHomeHero .main {
+  align-items: center;
+}
+
+/* 统一首页宽度 + 精确对齐 */
+.VPHome .container,
+.VPHome .content,
+.VPHome .VPHomeFeatures {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* 单独微调正文（往左拉一点点） */
+.VPHome .content {
+  margin-left: -8px;
+}
+
