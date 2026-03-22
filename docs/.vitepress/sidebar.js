@@ -1,4 +1,63 @@
 export default {
+  "/guide/工具箱/": [
+    {
+      "text": "工具箱",
+      "items": [
+        {
+          "text": "工程工具",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "Git",
+              "link": "/guide/工具箱/工程工具/Git"
+            },
+            {
+              "text": "MIT Missing Semester",
+              "link": "/guide/工具箱/工程工具/MIT Missing Semester"
+            }
+          ]
+        },
+        {
+          "text": "技术售前",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "什么是售前",
+              "link": "/guide/工具箱/技术售前/什么是售前"
+            }
+          ]
+        },
+        {
+          "text": "算法",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "stl",
+              "collapsed": false,
+              "items": [
+                {
+                  "text": "暴力解法",
+                  "link": "/guide/工具箱/算法/stl/暴力解法"
+                },
+                {
+                  "text": "stl：vector set map",
+                  "link": "/guide/工具箱/算法/stl/stl：vector set map"
+                },
+                {
+                  "text": "stl例题题解",
+                  "link": "/guide/工具箱/算法/stl/stl例题题解"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "学习系统",
+          "link": "/guide/工具箱/学习系统"
+        }
+      ]
+    }
+  ],
   "/guide/技术体系/": [
     {
       "text": "技术体系",
@@ -186,65 +245,6 @@ export default {
         {
           "text": "Obidians同步到GitHub",
           "link": "/guide/项目实践/Obidians同步到GitHub"
-        }
-      ]
-    }
-  ],
-  "/guide/学习记录/": [
-    {
-      "text": "学习记录",
-      "items": [
-        {
-          "text": "工程工具",
-          "collapsed": false,
-          "items": [
-            {
-              "text": "Git",
-              "link": "/guide/学习记录/工程工具/Git"
-            },
-            {
-              "text": "MIT Missing Semester",
-              "link": "/guide/学习记录/工程工具/MIT Missing Semester"
-            }
-          ]
-        },
-        {
-          "text": "技术售前",
-          "collapsed": false,
-          "items": [
-            {
-              "text": "什么是售前",
-              "link": "/guide/学习记录/技术售前/什么是售前"
-            }
-          ]
-        },
-        {
-          "text": "算法",
-          "collapsed": false,
-          "items": [
-            {
-              "text": "stl",
-              "collapsed": false,
-              "items": [
-                {
-                  "text": "暴力解法",
-                  "link": "/guide/学习记录/算法/stl/暴力解法"
-                },
-                {
-                  "text": "stl：vector set map",
-                  "link": "/guide/学习记录/算法/stl/stl：vector set map"
-                },
-                {
-                  "text": "stl例题题解",
-                  "link": "/guide/学习记录/算法/stl/stl例题题解"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "text": "学习系统",
-          "link": "/guide/学习记录/学习系统"
         }
       ]
     }

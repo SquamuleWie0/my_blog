@@ -388,7 +388,7 @@ body {
   align-self: center !important;
   justify-self: start;
   margin-top: 0 !important;
-  transform: translate(85px, 60px);
+  transform: translate(8px, 45px);
 }
 
 @media (max-width: 768px) {
@@ -402,3 +402,75 @@ body {
   }
 }
 
+.VPHero .text {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .VPHero .text {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hero 整体改成单列 */
+  .VPHero .container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 18px;
+  }
+
+  /* 左侧文字区域恢复正常宽度 */
+  .VPHero .main {
+    max-width: 100% !important;
+    width: 100%;
+    order: 1;
+  }
+
+  /* 右侧头像区域放到文字下面，并取消所有位移 */
+  .VPHero .image,
+  .VPHomeHero .image {
+    order: 2;
+    justify-self: center !important;
+    align-self: center !important;
+    margin-top: 8px !important;
+    transform: none !important;
+  }
+
+  /* 头像尺寸缩小一点，避免挤占空间 */
+  .VPHero .image img,
+  .VPHomeHero .image img {
+    width: 180px !important;
+    height: 180px !important;
+    max-width: 60vw;
+  }
+
+  /* 标题和副标题允许正常换行 */
+  .VPHero .name {
+    font-size: 52px !important;
+    line-height: 1.05;
+  }
+
+  .VPHero .text {
+    white-space: normal !important;
+    font-size: 24px !important;
+    line-height: 1.45;
+  }
+
+  .VPHero .tagline {
+    white-space: normal !important;
+    line-height: 1.8;
+  }
+
+  /* 按钮区别太挤 */
+  .VPHero .actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* 顶部留白收一点 */
+  .VPHero {
+    padding-top: 68px !important;
+    padding-bottom: 24px !important;
+  }
+}
