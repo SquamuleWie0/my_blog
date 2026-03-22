@@ -22,7 +22,8 @@ hero:
 
 ## 关于我
 
-你好，我是 **Wie0**。  
+我是 **Wie0**
+
 目前是一名计算机科学与技术专业在读学生，正在持续整理和构建自己的技术体系。
 
 这个博客主要用来记录和输出我在这些方向上的学习与实践：
@@ -33,22 +34,18 @@ hero:
 - 云原生与工程化
 - 课程笔记与项目记录
 
-我希望这里不只是一个记笔记的地方，而是一个能长期沉淀、持续更新的个人技术站。
-
----
-
 ## 内容导航
 
 <div class="home-links">
 
 <a class="home-link-item" href="/my_blog/guide/技术体系/基础能力/Linux">
   <span class="home-link-title">技术体系</span>
-  <span class="home-link-desc">围绕基础能力、容器和云原生，逐步整理自己的知识结构。</span>
+  <span class="home-link-desc">围绕基础能力、容器和云原生，逐步整理的知识结构。</span>
 </a>
 
 <a class="home-link-item" href="/my_blog/guide/课程笔记/算法设计">
   <span class="home-link-title">课程笔记</span>
-  <span class="home-link-desc">记录课程学习中的重点内容、知识梳理和复习整理。</span>
+  <span class="home-link-desc">主要是在专业以及通识基础课程学习中的重点内容、知识梳理和复习整理。</span>
 </a>
 
 <a class="home-link-item" href="/my_blog/guide/项目实践/个人网站部署/step1-网站部署">
@@ -56,9 +53,9 @@ hero:
   <span class="home-link-desc">记录真实动手过程，包括博客搭建、部署、迁移与发布。</span>
 </a>
 
-<a class="home-link-item" href="/my_blog/guide/学习记录/学习系统">
+<a class="home-link-item" href="/my_blog/guide/工具箱/工程工具/MIT Missing Semester">
   <span class="home-link-title">学习记录</span>
-  <span class="home-link-desc">保留平时学习中的过程性积累，包括工具、算法和阶段性思考。</span>
+  <span class="home-link-desc">平时学习中的过程性积累，包括工具、算法和阶段性思考。</span>
 </a>
 
 </div>
@@ -82,7 +79,7 @@ hero:
   <span class="article-item-arrow">→</span>
 </a>
 
-<a class="article-item" href="/my_blog/guide/学习记录/学习系统">
+<a class="article-item" href="/my_blog/guide/工具箱/工程工具/MIT Missing Semester">
   <span class="article-item-title">学习系统</span>
   <span class="article-item-arrow">→</span>
 </a>
@@ -108,7 +105,5 @@ hero:
 
 ## 关于这个博客
 
-这个博客记录的不只是结果，也包括过程。
-
-我会把学习中的问题、理解、项目实践、部署过程和知识整理都放进来。  
-它不是一次性完成的作品，而是一个会随着学习持续生长的技术知识库。
+这个博客记录我会把学习中的问题、理解、项目实践、部署过程和知识整理都放进来。  
+作为一个会随着学习持续生长的技术知识库。
