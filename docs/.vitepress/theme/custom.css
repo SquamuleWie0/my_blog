@@ -377,75 +377,97 @@ body {
 
 @media (max-width: 768px) {
   .VPHero {
-    padding-top: 64px !important;
-    padding-bottom: 24px !important;
+    padding-top: 28px !important;
+    padding-bottom: 20px !important;
   }
 
-  /* 关键：强制 Hero 变成纵向排列 */
+  .VPHomeHero {
+    padding-top: 0 !important;
+  }
+
+  /* 整个 Hero 手机端改成单列，并以同一条中心线布局 */
   .VPHero .container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 12px !important;
+    gap: 6px !important;
+    width: 100% !important;
   }
 
-  /* 关键：头像放最上面 */
+  /* 头像块：占满整行，但内部内容严格水平居中 */
   .VPHero .image,
   .VPHomeHero .image {
     order: 1 !important;
-    margin: 0 auto 8px -12px !important;
-    transform: none !important;
-    justify-self: center !important;
-    align-self: center !important;
-  }
-
-  /* 关键：文字整体放下面并居中 */
-  .VPHero .main {
-    order: 2 !important;
     width: 100% !important;
-    max-width: 100% !important;
-    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
     align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .VPHero .name {
-    font-size: 30px !important;
-    line-height: 1.12 !important;
-    text-align: center !important;
-    justify-content: center !important;
-  }
-
-  .VPHero .text {
-    white-space: normal !important;
-    font-size: 18px !important;
-    line-height: 1.5 !important;
-    text-align: center !important;
-    justify-content: center !important;
-  }
-
-  .VPHero .tagline {
-    max-width: 100% !important;
-    white-space: normal !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    line-height: 1.75 !important;
-  }
-
-  .VPHero .actions {
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    gap: 10px !important;
+    margin: 0 !important;
+    transform: none !important;
+    padding: 0 !important;
   }
 
   .VPHero .image img,
   .VPHomeHero .image img {
-    width: 148px !important;
-    height: 148px !important;
-    max-width: 52vw !important;
+    width: 132px !important;
+    height: 132px !important;
+    max-width: 48vw !important;
     display: block !important;
+    margin: 0 !important;
+  }
+
+  /* 文字块：也占满整行，并严格水平居中 */
+  .VPHero .main {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 关键：名字这一行单独占满一整行，文本自身居中 */
+  .VPHero .name {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
     margin: 0 auto !important;
+    font-size: 28px !important;
+    line-height: 1.08 !important;
+  }
+
+  .VPHero .text {
+    width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+    font-size: 17px !important;
+    line-height: 1.45 !important;
+    margin: 0 auto !important;
+  }
+
+  .VPHero .tagline {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    line-height: 1.7 !important;
+  }
+
+  .VPHero .actions {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-top: 8px !important;
   }
 
   .VPHome h2 {
@@ -454,43 +476,5 @@ body {
 
   .article-item {
     align-items: flex-start;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .VPHero .main {
-    order: 2 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-
-  .VPHero .name {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-    margin: 0 auto !important;
-    font-size: 30px !important;
-    line-height: 1.12 !important;
-  }
-
-  .VPHero .image,
-  .VPHomeHero .image {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 auto 8px !important;
-    transform: none !important;
-  }
-
-  .VPHero .image img,
-  .VPHomeHero .image img {
-    display: block !important;
-    margin: 0 auto !important;
   }
 }
