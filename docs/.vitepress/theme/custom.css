@@ -394,7 +394,7 @@ body {
   .VPHero .image,
   .VPHomeHero .image {
     order: 1 !important;
-    margin: 0 auto 8px !important;
+    margin: 0 auto 8px -12px !important;
     transform: none !important;
     justify-self: center !important;
     align-self: center !important;
@@ -454,5 +454,43 @@ body {
 
   .article-item {
     align-items: flex-start;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .VPHero .main {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .VPHero .name {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    font-size: 30px !important;
+    line-height: 1.12 !important;
+  }
+
+  .VPHero .image,
+  .VPHomeHero .image {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto 8px !important;
+    transform: none !important;
+  }
+
+  .VPHero .image img,
+  .VPHomeHero .image img {
+    display: block !important;
+    margin: 0 auto !important;
   }
 }
