@@ -9,7 +9,21 @@ export default {
           "items": [
             {
               "text": "Git",
-              "link": "/guide/工具箱/工程工具/Git"
+              "collapsed": false,
+              "items": [
+                {
+                  "text": "Git",
+                  "link": "/guide/工具箱/工程工具/Git/Git"
+                },
+                {
+                  "text": "Obidians同步到GitHub",
+                  "link": "/guide/工具箱/工程工具/Git/Obidians同步到GitHub"
+                }
+              ]
+            },
+            {
+              "text": "Git 与 Docker 学习总结",
+              "link": "/guide/工具箱/工程工具/Git 与 Docker 学习总结"
             },
             {
               "text": "MIT Missing Semester",
@@ -62,6 +76,22 @@ export default {
     {
       "text": "技术体系",
       "items": [
+        {
+          "text": "后端开发",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "AI Agent",
+              "collapsed": false,
+              "items": [
+                {
+                  "text": "AI Agent",
+                  "link": "/guide/技术体系/后端开发/AI Agent/AI Agent"
+                }
+              ]
+            }
+          ]
+        },
         {
           "text": "基础能力",
           "collapsed": false,
@@ -213,38 +243,60 @@ export default {
       "text": "项目实践",
       "items": [
         {
-          "text": "个人网站部署",
+          "text": "Blog-agent",
           "collapsed": false,
           "items": [
             {
-              "text": "草稿箱",
-              "link": "/guide/项目实践/个人网站部署/草稿箱"
+              "text": "step1-搭建learning agent雏形",
+              "link": "/guide/项目实践/Blog-agent/step1-搭建learning agent雏形"
             },
             {
-              "text": "Git 在博客项目中的使用",
-              "link": "/guide/项目实践/个人网站部署/Git 在博客项目中的使用"
+              "text": "step2-study agent 开发前准备",
+              "link": "/guide/项目实践/Blog-agent/step2-study agent 开发前准备"
             },
             {
-              "text": "step1-网站部署",
-              "link": "/guide/项目实践/个人网站部署/step1-网站部署"
+              "text": "step3-AI 学习助手系统功能清单、开发优先级与 MVP 迭代计划",
+              "link": "/guide/项目实践/Blog-agent/step3-AI 学习助手系统功能清单、开发优先级与 MVP 迭代计划"
             },
             {
-              "text": "step2-环境确认与架构认知",
-              "link": "/guide/项目实践/个人网站部署/step2-环境确认与架构认知"
-            },
-            {
-              "text": "step3-博客重构与迁移",
-              "link": "/guide/项目实践/个人网站部署/step3-博客重构与迁移"
-            },
-            {
-              "text": "step4-上传到服务器",
-              "link": "/guide/项目实践/个人网站部署/step4-上传到服务器"
+              "text": "step4-AI系统模块划分与实现设计",
+              "link": "/guide/项目实践/Blog-agent/step4-AI系统模块划分与实现设计"
             }
           ]
         },
         {
-          "text": "Obidians同步到GitHub",
-          "link": "/guide/项目实践/Obidians同步到GitHub"
+          "text": "website",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "草稿箱",
+              "link": "/guide/项目实践/website/草稿箱"
+            },
+            {
+              "text": "Git 在博客项目中的使用",
+              "link": "/guide/项目实践/website/Git 在博客项目中的使用"
+            },
+            {
+              "text": "GitHub Pages 自动部署",
+              "link": "/guide/项目实践/website/GitHub Pages 自动部署"
+            },
+            {
+              "text": "step1-网站部署",
+              "link": "/guide/项目实践/website/step1-网站部署"
+            },
+            {
+              "text": "step2-环境确认与架构认知",
+              "link": "/guide/项目实践/website/step2-环境确认与架构认知"
+            },
+            {
+              "text": "step3-博客重构与迁移",
+              "link": "/guide/项目实践/website/step3-博客重构与迁移"
+            },
+            {
+              "text": "step4-上传到服务器",
+              "link": "/guide/项目实践/website/step4-上传到服务器"
+            }
+          ]
         }
       ]
     }
