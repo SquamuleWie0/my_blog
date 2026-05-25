@@ -1,10 +1,3 @@
----
-title: Git
-date: 2026-3-08
-tags:
-  - GitHub
-categories: 工程工具 - 工程工具
----
 # Git
 
 `Git = 记录项目历史快照的版本管理系统`

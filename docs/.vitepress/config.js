@@ -9,10 +9,10 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '技术体系', link: '/guide/技术体系/基础能力/Linux' },
-      { text: '课程笔记', link: '/guide/课程笔记/大学物理' },
-      { text: '项目实践', link: '/guide/项目实践/website/step1-网站部署' },
-      { text: '工具箱', link: '/guide/工具箱/学习系统' }
+      { text: '技术体系', link: '/guide/技术体系/AI Agent/AI Agent 应用开发& Python 后端开发学习复盘' },
+      { text: '课程笔记', link: '/guide/课程笔记/算法设计' },
+      { text: '项目实践', link: '/guide/项目实践/RopeMind/日志/README' },
+      { text: '工具箱', link: '/guide/工具箱/工程工具/Git/Git' }
     ],
     sidebar,
     lastUpdated: true,
