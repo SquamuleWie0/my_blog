@@ -79,8 +79,6 @@ export default {
     { text: '断舍离之后', link: '/guide/杂札/断舍离之后' },
     { text: '年末的时候想什么', link: '/guide/杂札/年末的时候想什么' },
     { text: '什么是真正的成长', link: '/guide/杂札/什么是真正的成长' },
-    { text: '跟 AI 跑完博客，404 教我做人', link: '/guide/杂札/跟 AI 跑完博客，404 教我做人' },
-    { text: '我把首页玩坏了', link: '/guide/杂札/我把首页玩坏了' },
     { text: '焦虑的来源', link: '/guide/杂札/焦虑的来源' }
   ]
 }
