@@ -1,4 +1,11 @@
 node_modules
 docs/.vitepress/dist
 docs/.vitepress/cache
+# 嵌套的 build 产物（之前误提交，已删除）
+docs/.vitepress/docs/
+# 手动备份目录（重构时的安全网）
+docs/guide_backup_*/
+# 临时文件
+import-list.txt
+*.bak
 .DS_Store
