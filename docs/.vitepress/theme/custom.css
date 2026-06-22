@@ -478,3 +478,91 @@ body {
     align-items: flex-start;
   }
 }
+/* 首页「怎么想」卡片网格 */
+.hp-principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 16px 0 28px;
+}
+.hp-principle {
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.hp-principle:hover {
+  transform: translateY(-2px);
+  border-color: var(--vp-c-brand-1);
+}
+.hp-principle-key {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--vp-c-brand-1);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.hp-principle-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--vp-c-text-1);
+  margin-bottom: 4px;
+}
+.hp-principle-desc {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.55;
+}
+
+/* 首页「现在在学」标签云 */
+.hp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 28px;
+}
+.hp-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--vp-c-default-soft);
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+  font-size: 0.85rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+.hp-tag:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+.hp-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--vp-c-brand-1);
+}
+
+/* 区块小标题 */
+.hp-block-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 36px 0 4px;
+  color: var(--vp-c-text-1);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.hp-block-title small {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--vp-c-text-2);
+  letter-spacing: 0.04em;
+}

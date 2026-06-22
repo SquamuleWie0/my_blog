@@ -13,13 +13,15 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /guide/技术体系/AI Agent/AI Agent
+      link: /guide/Agent/AI%20Agent/AI%20Agent
     - theme: alt
       text: GitHub
       link: https://github.com/SquamuleWie0
 
 ---
+
 ## 关于我
+
 计算机科学与技术专业在读，主要关注后端开发、AI Agent 应用与工程实践。
 
 对技术的兴趣不止于工具本身。相比单纯理解一个概念或实现一个功能，我更关心智能体如何进入真实场景，回应具体需求，并在系统中产生实际价值。
