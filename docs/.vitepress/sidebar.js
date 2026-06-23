@@ -79,6 +79,7 @@ export default {
     { text: '断舍离之后', link: '/guide/杂札/断舍离之后' },
     { text: '年末的时候想什么', link: '/guide/杂札/年末的时候想什么' },
     { text: '什么是真正的成长', link: '/guide/杂札/什么是真正的成长' },
-    { text: '焦虑的来源', link: '/guide/杂札/焦虑的来源' }
+    { text: '焦虑的来源', link: '/guide/杂札/焦虑的来源' },
+    { text: '这三月', link: '/guide/杂札/这三月' }
   ]
 }
