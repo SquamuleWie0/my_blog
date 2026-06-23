@@ -3,7 +3,7 @@ layout: doc
 sidebar: true
 ---
 
-<div style="position: relative; text-align: center; padding: 3rem 1rem 4rem; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: center 35%; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 0 24px;">
+<div style="position: relative; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: center 35%; border-radius: 12px; aspect-ratio: 1790 / 1002; margin: 0 0 24px;">
 
   <!-- 4 段柔和晕染：顶部→中淡→中浓→底浓 -->
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,15,30,0.7) 0%, rgba(20,15,30,0.3) 25%, rgba(20,15,30,0.1) 50%, rgba(20,15,30,0.45) 75%, rgba(20,15,30,0.85) 100%); pointer-events: none;"></div>
@@ -41,21 +41,23 @@ sidebar: true
     <polygon points="50,10 90,90 10,90" fill="none" stroke="#e8a0bd" stroke-width="1.5" />
   </svg>
 
-  <!-- 水豚噜噜（替代头像位置） -->
-  <!-- 头像区改用：用户提供的船头甲板背景 -->
+  <!-- 中央内容：position absolute 居中 -->
+  <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem;">
 
-  <h1 style="margin: 0.5rem 0 0.5rem; font-family: 'Caveat', cursive; font-weight: 700; font-size: 5rem; line-height: 1.1; background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 50%, #ffd6b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.02em; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); position: relative; z-index: 1;">Wie0</h1>
+    <h1 style="margin: 0.5rem 0 0.5rem; font-family: 'Caveat', cursive; font-weight: 700; font-size: 5rem; line-height: 1.1; background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 50%, #ffd6b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.02em; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));">Wie0</h1>
 
-  <p style="color: #f5f5f5; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem; text-shadow: 0 1px 3px rgba(0,0,0,0.6); position: relative; z-index: 1;">
-    需要耐心，慢慢来<br>
-    相信一切都会一点点变得清晰<br>
-    答案会在不知不觉中悄然浮现
-  </p>
+    <p style="color: #f5f5f5; font-size: 1.05rem; line-height: 2; margin: 0.5rem 0 1rem; text-shadow: 0 1px 3px rgba(0,0,0,0.6);">
+      需要耐心，慢慢来<br>
+      相信一切都会一点点变得清晰<br>
+      答案会在不知不觉中悄然浮现
+    </p>
 
-  <p style="position: relative; z-index: 1;">
-    <a href="/guide/Agent/AI%20Agent/AI%20Agent" style="display: inline-block; padding: 0.45rem 1.1rem; background: linear-gradient(135deg, #e8a0bd, #f4c1d4); color: #ffffff; border-radius: 999px; font-size: 0.9rem; font-weight: 500; margin-right: 0.5rem; text-decoration: none; box-shadow: 0 3px 10px rgba(232, 160, 189, 0.3);">开始阅读 →</a>
-    <a href="https://github.com/SquamuleWie0" style="display: inline-block; padding: 0.45rem 1.1rem; background: transparent; color: #d77da5; border: 1.5px solid #e8a0bd; border-radius: 999px; font-size: 0.9rem; font-weight: 500; text-decoration: none;">GitHub →</a>
-  </p>
+    <p>
+      <a href="/guide/Agent/AI%20Agent/AI%20Agent" style="display: inline-block; padding: 0.45rem 1.1rem; background: linear-gradient(135deg, #e8a0bd, #f4c1d4); color: #ffffff; border-radius: 999px; font-size: 0.9rem; font-weight: 500; margin-right: 0.5rem; text-decoration: none; box-shadow: 0 3px 10px rgba(232, 160, 189, 0.3);">开始阅读 →</a>
+      <a href="https://github.com/SquamuleWie0" style="display: inline-block; padding: 0.45rem 1.1rem; background: transparent; color: #d77da5; border: 1.5px solid #e8a0bd; border-radius: 999px; font-size: 0.9rem; font-weight: 500; text-decoration: none;">GitHub →</a>
+    </p>
+
+  </div>
 
 </div>
 
