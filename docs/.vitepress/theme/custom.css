@@ -359,6 +359,11 @@ body {
   padding-top: 24px;
 }
 
+/* 去掉 group 之间的横线（保留 padding-top 间距） */
+.VPSidebar .group + .group {
+  border-top: none;
+}
+
 .VPSidebarItem.level-0 > .item > .text {
   font-weight: 700;
 }
