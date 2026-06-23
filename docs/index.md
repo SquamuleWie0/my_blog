@@ -3,11 +3,9 @@ layout: doc
 sidebar: true
 ---
 
-<div style="text-align: center; padding: 4rem 1rem 3rem;">
+<div style="text-align: center; padding: 3rem 1rem 2rem;">
 
-<img src="/avatar.png" alt="Wie0" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04); display: block; margin: 0 auto;" />
-
-<h1 style="margin: 1.5rem 0 0.25rem; color: #1a1a1a; font-size: 2.2rem; font-weight: 700;">Wie0</h1>
+<h1 style="margin: 0 0 0.5rem; color: #1a1a1a; font-size: 2.4rem; font-weight: 700;">Wie0</h1>
 
 <p style="color: #6b6b73; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem;">
 需要耐心，慢慢来<br>
