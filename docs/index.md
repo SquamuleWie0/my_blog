@@ -38,7 +38,7 @@ sidebar: true
   <!-- 水豚噜噜（替代头像位置） -->
   <div style="font-size: 120px; line-height: 1; margin-bottom: 1rem; filter: drop-shadow(0 6px 16px rgba(232, 160, 189, 0.35));">🦫</div>
 
-  <h1 style="margin: 0.5rem 0 0.25rem; color: #1a1a1a; font-size: 2.4rem; font-weight: 700;">Wie0</h1>
+  <h1 style="margin: 0.5rem 0 0.5rem; font-family: 'Caveat', cursive; font-weight: 700; font-size: 5rem; line-height: 1.1; background: linear-gradient(135deg, #d77da5 0%, #e8a0bd 50%, #f4c1d4 100%); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.02em;">Wie0</h1>
 
   <p style="color: #6b6b73; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem;">
     需要耐心，慢慢来<br>

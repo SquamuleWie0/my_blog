@@ -6,6 +6,12 @@ export default defineConfig({
   description: '记录学习笔记、项目经验与技术总结的博客',
   base: '/my_blog/',
 
+  head: [
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Pacifico&display=swap' }]
+  ],
+
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
