@@ -1,28 +1,28 @@
 :root {
-  --vp-c-brand-1: #e85d3c;
-  --vp-c-brand-2: #f5a05e;
-  --vp-c-brand-3: #c34a3c;
-  --vp-c-brand-soft: rgba(232, 93, 60, 0.14);
+  --vp-c-brand-1: #e8a0bd;
+  --vp-c-brand-2: #f4c1d4;
+  --vp-c-brand-3: #d77da5;
+  --vp-c-brand-soft: rgba(232, 160, 189, 0.14);
 
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(120deg, #c34a3c 0%, #f5a05e 100%);
+  --vp-home-hero-name-background: linear-gradient(120deg, #d77da5 0%, #f4c1d4 100%);
 
-  --vp-c-bg-soft: #fdf2eb;
-  --vp-c-default-soft: #fef9f0;
-  --vp-c-divider: rgba(195, 110, 70, 0.18);
-  --vp-c-border: rgba(195, 110, 70, 0.12);
+  --vp-c-bg-soft: #fdf2f6;
+  --vp-c-default-soft: #fef5f8;
+  --vp-c-divider: rgba(220, 130, 170, 0.18);
+  --vp-c-border: rgba(220, 130, 170, 0.12);
 }
 
 .dark {
-  --vp-c-brand-1: #ff8c5c;
-  --vp-c-brand-2: #ffb87a;
-  --vp-c-brand-3: #d96a4e;
-  --vp-c-brand-soft: rgba(255, 140, 92, 0.18);
+  --vp-c-brand-1: #f4a6c0;
+  --vp-c-brand-2: #f8c4d6;
+  --vp-c-brand-3: #e895b5;
+  --vp-c-brand-soft: rgba(244, 166, 192, 0.18);
 
-  --vp-c-bg-soft: #2a1f1a;
-  --vp-c-default-soft: #322822;
-  --vp-c-divider: rgba(255, 160, 110, 0.18);
-  --vp-c-border: rgba(255, 160, 110, 0.14);
+  --vp-c-bg-soft: #2a1f24;
+  --vp-c-default-soft: #322a2f;
+  --vp-c-divider: rgba(255, 160, 195, 0.18);
+  --vp-c-border: rgba(255, 160, 195, 0.14);
 }
 
 html {
@@ -41,12 +41,12 @@ body {
 .VPNavBar {
   background-color: rgba(255, 255, 255, 0.82) !important;
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(195, 110, 70, 0.08);
+  border-bottom: 1px solid rgba(220, 130, 170, 0.08);
 }
 
 .dark .VPNavBar {
   background-color: rgba(24, 27, 33, 0.82) !important;
-  border-bottom: 1px solid rgba(255, 160, 110, 0.08);
+  border-bottom: 1px solid rgba(255, 160, 195, 0.08);
 }
 
 /* Hero 顶部 */
@@ -95,8 +95,8 @@ body {
   object-fit: cover;
   border: 6px solid rgba(255, 255, 255, 0.82);
   box-shadow:
-    0 12px 30px rgba(155, 85, 50, 0.08),
-    0 2px 8px rgba(155, 85, 50, 0.05);
+    0 12px 30px rgba(195, 100, 145, 0.08),
+    0 2px 8px rgba(195, 100, 145, 0.05);
   transform: none !important;
   transition: box-shadow 0.2s ease;
 }
@@ -113,8 +113,8 @@ body {
 .VPHomeHero .image img:hover {
   transform: none !important;
   box-shadow:
-    0 14px 32px rgba(155, 85, 50, 0.09),
-    0 3px 10px rgba(155, 85, 50, 0.06);
+    0 14px 32px rgba(195, 100, 145, 0.09),
+    0 3px 10px rgba(195, 100, 145, 0.06);
 }
 
 .dark .VPHero .image img:hover,
@@ -139,11 +139,11 @@ body {
 }
 
 .VPButton.brand {
-  box-shadow: 0 6px 16px rgba(155, 85, 50, 0.12);
+  box-shadow: 0 6px 16px rgba(195, 100, 145, 0.12);
 }
 
 .VPButton.brand:hover {
-  box-shadow: 0 10px 20px rgba(155, 85, 50, 0.16);
+  box-shadow: 0 10px 20px rgba(195, 100, 145, 0.16);
 }
 
 /* 首页整体宽度 */
@@ -180,7 +180,7 @@ body {
 .VPHome hr {
   margin: 28px 0;
   border: none;
-  border-top: 1px solid rgba(195, 110, 70, 0.12);
+  border-top: 1px solid rgba(220, 130, 170, 0.12);
 }
 
 /* 内容导航：改成单列，清楚好读 */
@@ -196,7 +196,7 @@ body {
   text-decoration: none !important;
   color: inherit !important;
   padding: 10px 0 14px;
-  border-bottom: 1px solid rgba(195, 110, 70, 0.12);
+  border-bottom: 1px solid rgba(220, 130, 170, 0.12);
   transition: padding-left 0.18s ease, opacity 0.18s ease;
 }
 
@@ -235,7 +235,7 @@ body {
   padding: 10px 0;
   text-decoration: none !important;
   color: var(--vp-c-text-1) !important;
-  border-bottom: 1px dashed rgba(195, 110, 70, 0.15);
+  border-bottom: 1px dashed rgba(220, 130, 170, 0.15);
   transition:
     padding-left 0.18s ease,
     opacity 0.18s ease,
@@ -273,10 +273,10 @@ body {
 .roadmap span {
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(195, 110, 70, 0.08);
+  background: rgba(220, 130, 170, 0.08);
   color: var(--vp-c-text-2);
   font-size: 0.92rem;
-  border: 1px solid rgba(195, 110, 70, 0.1);
+  border: 1px solid rgba(220, 130, 170, 0.1);
 }
 
 /* 正文 */
@@ -299,8 +299,8 @@ body {
 }
 
 .vp-doc blockquote {
-  border-left: 3px solid rgba(155, 85, 50, 0.24);
-  background: rgba(195, 110, 70, 0.05);
+  border-left: 3px solid rgba(195, 100, 145, 0.24);
+  background: rgba(220, 130, 170, 0.05);
   border-radius: 0 12px 12px 0;
   padding: 12px 16px;
   color: var(--vp-c-text-2);
@@ -309,21 +309,21 @@ body {
 .vp-doc :not(pre) > code {
   border-radius: 8px;
   padding: 0.2em 0.45em;
-  background: rgba(195, 110, 70, 0.08);
+  background: rgba(220, 130, 170, 0.08);
   color: var(--vp-c-text-1);
   font-size: 0.92em;
 }
 
 .vp-doc div[class*='language-'] {
   border-radius: 16px;
-  border: 1px solid rgba(195, 110, 70, 0.12);
-  box-shadow: 0 8px 22px rgba(155, 85, 50, 0.04);
+  border: 1px solid rgba(220, 130, 170, 0.12);
+  box-shadow: 0 8px 22px rgba(195, 100, 145, 0.04);
   margin: 20px 0;
   overflow: hidden;
 }
 
 .dark .vp-doc div[class*='language-'] {
-  border-color: rgba(255, 160, 110, 0.08);
+  border-color: rgba(255, 160, 195, 0.08);
   box-shadow: none;
 }
 
@@ -339,7 +339,7 @@ body {
 }
 
 .vp-doc tr:nth-child(2n) {
-  background: rgba(195, 110, 70, 0.03);
+  background: rgba(220, 130, 170, 0.03);
 }
 
 /* 侧边栏 */
