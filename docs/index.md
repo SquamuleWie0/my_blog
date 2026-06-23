@@ -22,9 +22,9 @@ sidebar: true
 <img src="/avatar.png" alt="Wie0" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 50px 8px rgba(255, 170, 68, 0.4), 0 6px 20px rgba(180, 100, 40, 0.15); position: relative; z-index: 1;" />
 
 <!-- 名字用 h1，去掉 # 锚点 -->
-<h1 style="margin: 1.5rem 0 0.25rem; color: #2a1a3a; text-shadow: 0 1px 2px rgba(255,255,255,0.5);">Wie0</h1>
+<h1 style="margin: 1.5rem 0 0.25rem; color: #3a2a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.5);">Wie0</h1>
 
-<p style="color: #4a3a2a; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem; text-shadow: 0 1px 2px rgba(255,255,255,0.4);">
+<p style="color: #3a2a1a; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem; text-shadow: 0 1px 2px rgba(255,255,255,0.4);">
 需要耐心，慢慢来<br>
 相信一切都会一点点变得清晰<br>
 答案会在不知不觉中悄然浮现
@@ -32,7 +32,7 @@ sidebar: true
 
 <p style="position: relative; z-index: 1;">
 <a href="/guide/Agent/AI%20Agent/AI%20Agent" style="display: inline-block; padding: 0.6rem 1.4rem; background: linear-gradient(135deg, #e85d3c, #f5a05e); color: #ffffff; border-radius: 6px; font-weight: 500; margin-right: 0.5rem; text-decoration: none; box-shadow: 0 4px 12px rgba(232, 93, 60, 0.3);">开始阅读 →</a>
-<a href="https://github.com/SquamuleWie0" style="display: inline-block; padding: 0.6rem 1.4rem; background: rgba(255,255,255,0.4); backdrop-filter: blur(8px); color: #6a4a2a; border: 1px solid rgba(180, 120, 80, 0.3); border-radius: 6px; font-weight: 500; text-decoration: none;">GitHub →</a>
+<a href="https://github.com/SquamuleWie0" style="display: inline-block; padding: 0.6rem 1.4rem; background: rgba(255,255,255,0.5); backdrop-filter: blur(8px); color: #3a2a1a; border: 1.5px solid #3a2a1a; border-radius: 6px; font-weight: 500; text-decoration: none;">GitHub →</a>
 </p>
 
 </div>
