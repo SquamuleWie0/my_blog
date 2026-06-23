@@ -4,8 +4,6 @@ title: Agent
 
 # Agent
 
-## 这里有什么
-
 - AI Agent 基础概念
 - Multi-Agent 架构与对比
 - Agent 实战与项目复盘

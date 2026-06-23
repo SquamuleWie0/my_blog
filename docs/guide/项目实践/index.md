@@ -4,8 +4,6 @@ title: 项目实践
 
 # 项目实践
 
-## 这里有什么
-
 - RopeMind（Agentic RAG 实践）
 - Blog-agent（AI 学习助手）
 - （其他项目待补充）
