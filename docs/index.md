@@ -24,8 +24,6 @@ sidebar: true
 <!-- 名字用 h1，去掉 # 锚点 -->
 <h1 style="margin: 1.5rem 0 0.25rem; color: #ffffff; text-shadow: 0 2px 8px rgba(0,0,0,0.35);">Wie0</h1>
 
-<p style="font-size: 1.4rem; font-weight: 500; margin: 0.25rem 0 1rem; color: #fff8f0; text-shadow: 0 1px 4px rgba(0,0,0,0.35);">试图驯服 Agent，偶尔被 Agent 驯服</p>
-
 <p style="color: #fff8f0; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem; text-shadow: 0 1px 4px rgba(0,0,0,0.35);">
 需要耐心，慢慢来<br>
 相信一切都会一点点变得清晰<br>
