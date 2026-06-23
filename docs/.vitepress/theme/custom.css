@@ -359,10 +359,10 @@ body {
   padding-top: 24px;
 }
 
-/* 去掉 group 之间的横线，让 group 间距 = 内部 item 间距（8px = 4+4 padding） */
+/* 去掉 group 之间的横线，让 group 间距 = 4px（4+(-4)+4=4） */
 .VPSidebar .group + .group {
   border-top: none;
-  margin-top: 0;
+  margin-top: -4px;
 }
 .VPSidebarItem.level-0,
 .VPSidebarItem.collapsed.level-0 {
