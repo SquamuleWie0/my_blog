@@ -394,13 +394,13 @@ body {
   color: var(--vp-c-brand-1);
 }
 
-/* 子项缩进（树形结构） */
+/* 子项缩进（树形结构，加大步子） */
 .VPSidebarItem .items {
-  margin-left: 8px;
+  margin-left: 12px;
   padding-left: 0;
 }
 .VPSidebarItem .items .VPSidebarItem > .item {
-  padding-left: 12px;
+  padding-left: 20px;
 }
 
 /* Hero 两列强制居中对齐 */
