@@ -3,7 +3,7 @@ layout: doc
 sidebar: true
 ---
 
-<div style="text-align: center; padding: 3rem 1rem 2rem; background: linear-gradient(180deg, var(--vp-c-bg-soft) 0%, var(--vp-c-bg) 100%); border-radius: 12px; margin-bottom: 2rem;">
+<div style="text-align: center; padding: 3rem 1rem 2rem; background: linear-gradient(180deg, #fef3e6 0%, #fef9f0 35%, var(--vp-c-bg) 100%); border-radius: 12px; margin-bottom: 2rem;">
 
 <img src="/avatar.png" alt="Wie0" style="width: 280px; height: 280px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 40px rgba(0,0,0,0.12); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" />
 
