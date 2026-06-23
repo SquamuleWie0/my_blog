@@ -3,7 +3,7 @@ layout: doc
 sidebar: true
 ---
 
-<div style="position: relative; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: center 35%; border-radius: 12px; aspect-ratio: 1790 / 1002; margin: 0 0 24px;">
+<div style="position: relative; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: center 35%; border-radius: 12px; aspect-ratio: 1790 / 1002; width: calc(100% + var(--vp-aside-width, 280px)); margin-right: calc(-1 * var(--vp-aside-width, 280px)); margin-bottom: 24px;">
 
   <!-- 4 段柔和晕染：顶部→中淡→中浓→底浓 -->
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,15,30,0.7) 0%, rgba(20,15,30,0.3) 25%, rgba(20,15,30,0.1) 50%, rgba(20,15,30,0.45) 75%, rgba(20,15,30,0.85) 100%); pointer-events: none;"></div>
