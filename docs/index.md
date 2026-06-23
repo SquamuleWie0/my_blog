@@ -5,9 +5,9 @@ sidebar: true
 
 <div style="text-align: center; padding: 3rem 1rem 2rem;">
 
-<h1 style="margin: 0 0 0.5rem; color: var(--vp-c-text-1); font-size: 2.4rem; font-weight: 700;">Wie0</h1>
+<h1 style="margin: 0 0 0.5rem; color: #1a1a1a; font-size: 2.4rem; font-weight: 700;">Wie0</h1>
 
-<p style="color: var(--vp-c-text-2); font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem;">
+<p style="color: #6b6b73; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem;">
 需要耐心，慢慢来<br>
 相信一切都会一点点变得清晰<br>
 答案会在不知不觉中悄然浮现
