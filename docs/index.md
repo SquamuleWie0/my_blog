@@ -3,7 +3,10 @@ layout: doc
 sidebar: true
 ---
 
-<div style="position: relative; text-align: center; padding: 3rem 1rem 2.5rem; overflow: hidden;">
+<div style="position: relative; text-align: center; padding: 4rem 1rem 3rem; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: center; border-radius: 12px;">
+
+  <!-- 暗色遮罩，确保文字清晰 -->
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 100%); pointer-events: none;"></div>
 
   <!-- 左上圆点矩阵 -->
   <svg style="position: absolute; top: 40px; left: 60px; width: 80px; height: 80px; opacity: 0.5; pointer-events: none;" viewBox="0 0 100 100">
@@ -36,11 +39,11 @@ sidebar: true
   </svg>
 
   <!-- 水豚噜噜（替代头像位置） -->
-  <div style="font-size: 120px; line-height: 1; margin-bottom: 1rem; filter: drop-shadow(0 6px 16px rgba(232, 160, 189, 0.35));">🦫</div>
+  <!-- 头像区改用：用户提供的船头甲板背景 -->
 
-  <h1 style="margin: 0.5rem 0 0.5rem; font-family: 'Caveat', cursive; font-weight: 700; font-size: 5rem; line-height: 1.1; background: linear-gradient(135deg, #d77da5 0%, #e8a0bd 50%, #f4c1d4 100%); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.02em;">Wie0</h1>
+  <h1 style="margin: 0.5rem 0 0.5rem; font-family: 'Caveat', cursive; font-weight: 700; font-size: 5rem; line-height: 1.1; background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 50%, #ffd6b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.02em; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); position: relative; z-index: 1;">Wie0</h1>
 
-  <p style="color: #6b6b73; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem;">
+  <p style="color: #f5f5f5; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem; text-shadow: 0 1px 3px rgba(0,0,0,0.6); position: relative; z-index: 1;">
     需要耐心，慢慢来<br>
     相信一切都会一点点变得清晰<br>
     答案会在不知不觉中悄然浮现
