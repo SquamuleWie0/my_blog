@@ -3,8 +3,6 @@ layout: doc
 sidebar: true
 ---
 
-# 试图驯服 Agent，偶尔被 Agent 驯服
-
 需要耐心，慢慢来
 相信一切都会一点点变得清晰
 答案会在不知不觉中悄然浮现
