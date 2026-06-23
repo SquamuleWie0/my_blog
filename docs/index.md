@@ -26,7 +26,7 @@ sidebar: true
   </svg>
 
   <!-- 左下细线 -->
-  <svg style="position: absolute; bottom: 60px; left: 100px; width: 100px; height: 8px; opacity: 0.4; pointer-events: none;" viewBox="0 0 100 2">
+  <svg style="position: absolute; bottom: 20px; left: 100px; width: 100px; height: 8px; opacity: 0.4; pointer-events: none;" viewBox="0 0 100 2">
     <line x1="0" y1="1" x2="100" y2="1" stroke="#d77da5" stroke-width="1" />
   </svg>
 
@@ -47,8 +47,8 @@ sidebar: true
   </p>
 
   <p style="position: relative; z-index: 1;">
-    <a href="/guide/Agent/AI%20Agent/AI%20Agent" style="display: inline-block; padding: 0.6rem 1.4rem; background: linear-gradient(135deg, #e8a0bd, #f4c1d4); color: #ffffff; border-radius: 6px; font-weight: 500; margin-right: 0.5rem; text-decoration: none; box-shadow: 0 4px 12px rgba(232, 160, 189, 0.3);">开始阅读 →</a>
-    <a href="https://github.com/SquamuleWie0" style="display: inline-block; padding: 0.6rem 1.4rem; background: transparent; color: #d77da5; border: 1.5px solid #e8a0bd; border-radius: 6px; font-weight: 500; text-decoration: none;">GitHub →</a>
+    <a href="/guide/Agent/AI%20Agent/AI%20Agent" style="display: inline-block; padding: 0.45rem 1.1rem; background: linear-gradient(135deg, #e8a0bd, #f4c1d4); color: #ffffff; border-radius: 999px; font-size: 0.9rem; font-weight: 500; margin-right: 0.5rem; text-decoration: none; box-shadow: 0 3px 10px rgba(232, 160, 189, 0.3);">开始阅读 →</a>
+    <a href="https://github.com/SquamuleWie0" style="display: inline-block; padding: 0.45rem 1.1rem; background: transparent; color: #d77da5; border: 1.5px solid #e8a0bd; border-radius: 999px; font-size: 0.9rem; font-weight: 500; text-decoration: none;">GitHub →</a>
   </p>
 
 </div>
