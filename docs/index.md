@@ -6,10 +6,10 @@ sidebar: true
 <div style="position: relative; text-align: center; padding: 4rem 1rem 3rem; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: center; border-radius: 12px; max-width: min(1280px, calc(100vw - 64px)); margin: 0 auto;">
 
   <!-- 4 段柔和晕染：顶部→中淡→中浓→底浓 -->
-  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,15,30,0.55) 0%, rgba(20,15,30,0.15) 25%, rgba(20,15,30,0.05) 50%, rgba(20,15,30,0.25) 75%, rgba(20,15,30,0.7) 100%); pointer-events: none;"></div>
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,15,30,0.7) 0%, rgba(20,15,30,0.3) 25%, rgba(20,15,30,0.1) 50%, rgba(20,15,30,0.45) 75%, rgba(20,15,30,0.85) 100%); pointer-events: none;"></div>
 
   <!-- 中央径向亮斑（晕染中心） -->
-  <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 45%, transparent 0%, rgba(20,15,30,0.2) 100%); pointer-events: none;"></div>
+  <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 45%, transparent 0%, rgba(20,15,30,0.35) 100%); pointer-events: none;"></div>
 
   <!-- 左上圆点矩阵 -->
   <svg style="position: absolute; top: 40px; left: 60px; width: 80px; height: 80px; opacity: 0.5; pointer-events: none;" viewBox="0 0 100 100">
