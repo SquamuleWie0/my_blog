@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "Wie0"
   text: "试图驯服 Agent，偶尔被 Agent 驯服"
-  tagline: "早睡主义者（DDL 不算）· 木薯羹持续供能中 🧑‍💻 · 爱吃后端全家桶"
+  tagline: "需要耐心，慢慢来<br>相信一切都会一点点变得清晰<br>答案会在不知不觉中悄然浮现"
 
   image:
     src: /avatar.png
