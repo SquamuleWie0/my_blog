@@ -359,9 +359,25 @@ body {
   padding-top: 24px;
 }
 
-/* 去掉 group 之间的横线（保留 padding-top 间距） */
+/* 去掉 group 之间的横线，group 之间紧凑（同一个 group 是一体） */
 .VPSidebar .group + .group {
   border-top: none;
+  margin-top: 12px;
+}
+.VPSidebarItem.level-0 {
+  padding-bottom: 0;
+}
+@media (min-width: 960px) {
+  .VPSidebar .group {
+    padding-top: 0;
+  }
+}
+
+/* caret 箭头从右侧移到文字最左侧 */
+.VPSidebarItem > .item .caret {
+  order: -1;
+  margin-right: 6px;
+  margin-left: 0;
 }
 
 .VPSidebarItem.level-0 > .item > .text {
