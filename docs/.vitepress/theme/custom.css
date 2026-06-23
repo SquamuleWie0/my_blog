@@ -359,12 +359,13 @@ body {
   padding-top: 24px;
 }
 
-/* 去掉 group 之间的横线，group 之间紧凑（同一个 group 是一体） */
+/* 去掉 group 之间的横线，让 group 间距 = 内部 item 间距（8px = 4+4 padding） */
 .VPSidebar .group + .group {
   border-top: none;
-  margin-top: 12px;
+  margin-top: 0;
 }
-.VPSidebarItem.level-0 {
+.VPSidebarItem.level-0,
+.VPSidebarItem.collapsed.level-0 {
   padding-bottom: 0;
 }
 @media (min-width: 960px) {
