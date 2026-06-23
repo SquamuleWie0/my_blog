@@ -1,6 +1,6 @@
 ---
-layout: home
-
+layout: doc
+sidebar: true
 hero:
   name: "Wie0"
   text: "试图驯服 Agent，偶尔被 Agent 驯服"
