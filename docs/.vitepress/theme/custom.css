@@ -359,10 +359,14 @@ body {
   padding-top: 24px;
 }
 
-/* 去掉 group 之间的横线，让 group 间距 = 4px（4+(-4)+4=4） */
+/* 去掉 group 之间的横线，group 间距 = 4px（同时覆盖 VitePress 默认的 padding-top:11px 和 padding-bottom:12px） */
+.VPSidebar .group {
+  padding-bottom: 0;
+}
 .VPSidebar .group + .group {
   border-top: none;
-  margin-top: -4px;
+  margin-top: 4px;
+  padding-top: 0;
 }
 .VPSidebarItem.level-0,
 .VPSidebarItem.collapsed.level-0 {
