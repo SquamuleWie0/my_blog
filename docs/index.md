@@ -3,7 +3,7 @@ layout: doc
 sidebar: true
 ---
 
-<div style="position: relative; text-align: center; padding: 4rem 1rem 3rem; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: center; border-radius: 12px; max-width: min(1280px, calc(100vw - 64px)); margin: 0 auto;">
+<div style="position: relative; text-align: center; padding: 6rem 1rem 5rem; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: center; border-radius: 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-top: -32px; margin-bottom: 16px;">
 
   <!-- 4 段柔和晕染：顶部→中淡→中浓→底浓 -->
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,15,30,0.7) 0%, rgba(20,15,30,0.3) 25%, rgba(20,15,30,0.1) 50%, rgba(20,15,30,0.45) 75%, rgba(20,15,30,0.85) 100%); pointer-events: none;"></div>
@@ -44,7 +44,7 @@ sidebar: true
   <!-- 水豚噜噜（替代头像位置） -->
   <!-- 头像区改用：用户提供的船头甲板背景 -->
 
-  <h1 style="margin: 0.5rem 0 0.5rem; font-family: 'Caveat', cursive; font-weight: 700; font-size: 5rem; line-height: 1.1; background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 50%, #ffd6b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.02em; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); position: relative; z-index: 1;">Wie0</h1>
+  <h1 style="margin: 0.5rem 0 0.5rem; font-family: 'Caveat', cursive; font-weight: 700; font-size: 6rem; line-height: 1.1; background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 50%, #ffd6b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.02em; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); position: relative; z-index: 1;">Wie0</h1>
 
   <p style="color: #f5f5f5; font-size: 1.05rem; line-height: 2; margin: 1rem 0 1.5rem; text-shadow: 0 1px 3px rgba(0,0,0,0.6); position: relative; z-index: 1;">
     需要耐心，慢慢来<br>
