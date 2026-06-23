@@ -3,7 +3,7 @@ layout: doc
 sidebar: true
 ---
 
-<div style="position: relative; text-align: center; padding: 6rem 1rem 5rem; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: center; border-radius: 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-top: -32px; margin-bottom: 16px;">
+<div style="position: relative; text-align: center; padding: 6rem 1rem 5rem; overflow: hidden; background-image: url(/my_blog/hero-bg.jpg); background-size: cover; background-position: top left; border-radius: 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-top: -32px; margin-bottom: 16px;">
 
   <!-- 4 段柔和晕染：顶部→中淡→中浓→底浓 -->
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,15,30,0.7) 0%, rgba(20,15,30,0.3) 25%, rgba(20,15,30,0.1) 50%, rgba(20,15,30,0.45) 75%, rgba(20,15,30,0.85) 100%); pointer-events: none;"></div>
