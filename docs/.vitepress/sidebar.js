@@ -38,7 +38,6 @@ export default {
       items: [
         { text: 'Git', link: '/guide/工程与部署/工程工具/Git/Git' },
         { text: 'Obsidian 同步到 GitHub', link: '/guide/工程与部署/工程工具/Git/Obidians同步到GitHub' },
-        { text: 'Git 与 Docker 学习总结', link: '/guide/工程与部署/工程工具/Git 与 Docker 学习总结' },
         { text: 'Shell', link: '/guide/工程与部署/工程工具/shell' },
         { text: 'MIT Missing Semester', link: '/guide/工程与部署/工程工具/MIT Missing Semester' },
         { text: 'Linux', link: '/guide/工程与部署/Linux' },
@@ -72,20 +71,6 @@ export default {
         { text: '年末的时候想什么', link: '/guide/杂札/年末的时候想什么' },
         { text: '什么是真正的成长', link: '/guide/杂札/什么是真正的成长' },
         { text: '焦虑的来源', link: '/guide/杂札/焦虑的来源' }
-      ]
-    },
-    {
-      text: '项目实践',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        { text: 'Blog-agent step1 搭建 learning agent 雏形', link: '/guide/项目实践/Blog-agent/step1-搭建learning agent雏形' },
-        { text: 'Blog-agent step2 study agent 开发前准备', link: '/guide/项目实践/Blog-agent/step2-study agent 开发前准备' },
-        { text: 'Blog-agent step3 MVP 迭代计划', link: '/guide/项目实践/Blog-agent/step3-AI 学习助手系统功能清单、开发优先级与 MVP 迭代计划' },
-        { text: 'Blog-agent step4 AI 系统模块划分与实现设计', link: '/guide/项目实践/Blog-agent/step4-AI系统模块划分与实现设计' },
-        { text: 'RopeMind 复盘', link: '/guide/项目实践/RopeMind/复盘' },
-        { text: 'RopeMind 进度日志', link: '/guide/项目实践/RopeMind/日志/进度日志' },
-        { text: 'RopeMind 日志 README', link: '/guide/项目实践/RopeMind/日志/README' }
       ]
     }
   ],
@@ -167,7 +152,6 @@ export default {
             { text: 'Obsidian 同步到 GitHub', link: '/guide/工程与部署/工程工具/Git/Obidians同步到GitHub' }
           ]
         },
-        { text: 'Git 与 Docker 学习总结', link: '/guide/工程与部署/工程工具/Git 与 Docker 学习总结' },
         { text: 'Shell', link: '/guide/工程与部署/工程工具/shell' },
         { text: 'MIT Missing Semester', link: '/guide/工程与部署/工程工具/MIT Missing Semester' }
       ]
@@ -230,38 +214,6 @@ export default {
         { text: '年末的时候想什么', link: '/guide/杂札/年末的时候想什么' },
         { text: '什么是真正的成长', link: '/guide/杂札/什么是真正的成长' },
         { text: '焦虑的来源', link: '/guide/杂札/焦虑的来源' }
-      ]
-    }
-  ],
-
-  // ============ 项目实践分区（嵌套树）============
-  '/guide/项目实践/': [
-    {
-      text: 'Blog-agent',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: 'step1 搭建 learning agent 雏形', link: '/guide/项目实践/Blog-agent/step1-搭建learning agent雏形' },
-        { text: 'step2 study agent 开发前准备', link: '/guide/项目实践/Blog-agent/step2-study agent 开发前准备' },
-        { text: 'step3 AI 学习助手系统功能清单、开发优先级与 MVP 迭代计划', link: '/guide/项目实践/Blog-agent/step3-AI 学习助手系统功能清单、开发优先级与 MVP 迭代计划' },
-        { text: 'step4 AI 系统模块划分与实现设计', link: '/guide/项目实践/Blog-agent/step4-AI系统模块划分与实现设计' }
-      ]
-    },
-    {
-      text: 'RopeMind',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: '复盘', link: '/guide/项目实践/RopeMind/复盘' },
-        {
-          text: '日志',
-          collapsible: true,
-          collapsed: false,
-          items: [
-            { text: '进度日志', link: '/guide/项目实践/RopeMind/日志/进度日志' },
-            { text: 'README', link: '/guide/项目实践/RopeMind/日志/README' }
-          ]
-        }
       ]
     }
   ]
