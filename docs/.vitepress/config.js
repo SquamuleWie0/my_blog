@@ -34,6 +34,10 @@ export default defineConfig({
       { text: '杂札', link: '/guide/杂札/' }
     ],
     sidebar,
+    outline: {
+      level: [2, 3, 4],
+      label: '本页大纲'
+    },
     lastUpdated: true,
     editLink: {
       pattern: 'https://github.com/SquamuleWie0/my_blog/edit/main/docs/:path',
