@@ -12,7 +12,6 @@
 
 **git**本质上是记录**快照**，每一次`commit`的本质是整个项目文件的一次快照
 
----
 ## 版本控制系统作用
 ### 版本退回
 - 可以回到某个历史版本
@@ -41,7 +40,6 @@ main
 git merge
 ```
 
----
 ## Git的历史结构--GAD
 git 的历史提交是一个GAD（Directed Acyclic Graph）
 - 有向无环图
@@ -52,7 +50,6 @@ o ← o ← o ← o
           o ← o
 ```
 
----
 ## Git的数据类型
 >Git有三种核心对象
 ### blob
@@ -93,7 +90,6 @@ commit {
 }
 ```
 
----
 ## Git 的对象储存
 
 Git 的所有对象都是通过**SHA-1 哈希值**储存
@@ -105,7 +101,6 @@ objects = map<hash, object>
 - 对象不可修改
 - 被修改后的文件生成新的对象
 
----
 ## References（引用）
 
 由于 commit 的 hash 很长，不方便记忆，
@@ -119,7 +114,6 @@ dev  → 91f83aa
 
 branch 本质就是一种 reference。
 
----
 
 ## HEAD
 
@@ -130,7 +124,6 @@ HEAD 是一个特殊的 reference，
 
 HEAD → branch → commit
 
----
 ## Git的本质
 包含两个部分：
 ```
@@ -141,7 +134,6 @@ HEAD → branch → commit
 
 但是所有的git 的操作本质都是：修改 commit DAG
 
----
 ## Staging Area 暂存区
 
 主要作用是控制提交的内容
@@ -151,7 +143,6 @@ HEAD → branch → commit
 工作区     ------>    暂存区     ----->.     生成 commit
 ```
 
----
 ## 常用的操作
 
 ### 版本退回

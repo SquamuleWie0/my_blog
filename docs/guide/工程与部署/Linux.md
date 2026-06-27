@@ -17,7 +17,6 @@ Linux
 └── 8 Shell 脚本
 ```
 
----
 
 # 1 Linux 文件系统
 
@@ -69,7 +68,6 @@ touch test.txt
 tree
 ```
 
----
 
 # 2 Linux 核心命令
 
@@ -107,7 +105,6 @@ rm file.txt
 cat file.txt
 ```
 
----
 
 ## 输出与重定向
 
@@ -127,7 +124,6 @@ echo "hello" > file.txt
 echo "world" >> file.txt
 ```
 
----
 
 ## 管道（Pipe）
 
@@ -153,7 +149,6 @@ ls | grep txt
 ls | wc -l
 ```
 
----
 
 # 3 文本处理工具
 
@@ -175,7 +170,6 @@ ls | grep txt
 ps aux | grep sleep
 ```
 
----
 
 ## wc
 
@@ -187,7 +181,6 @@ ps aux | grep sleep
 ls | wc -l
 ```
 
----
 
 ## 常见文本工具
 
@@ -199,7 +192,6 @@ ls | wc -l
 | head | 查看前几行 |
 | tail | 查看后几行 |
 
----
 
 # 4 权限系统
 
@@ -231,7 +223,6 @@ ls -l
 |w|写入|
 |x|执行|
 
----
 
 ## 修改权限
 
@@ -263,7 +254,6 @@ chmod 755 script.sh
 其他：读执行
 ```
 
----
 
 # 5 进程管理
 
@@ -278,7 +268,6 @@ chmod 755 script.sh
 - Web服务器
 - Docker容器
 
----
 
 ## 查看进程
 
@@ -297,7 +286,6 @@ ps aux
 |MEM|内存使用|
 |COMMAND|运行程序|
 
----
 
 ## 筛选进程
 
@@ -307,7 +295,6 @@ ps aux
 ps aux | grep sleep
 ```
 
----
 
 ## 创建进程实验
 
@@ -322,7 +309,6 @@ sleep 100
 程序暂停 100 秒。
 系统中会生成一个新的进程。
 
----
 
 ## 后台运行
 
@@ -340,7 +326,6 @@ sleep 100 &
 
 > 在后台运行程序
 
----
 
 ## 结束进程
 
@@ -362,7 +347,6 @@ kill PID
 kill 12345
 ```
 
----
 
 # 6 软件安装
 
@@ -395,7 +379,6 @@ tree
 sudo apt install nginx
 ```
 
----
 
 # 7 网络基础
 
@@ -421,7 +404,6 @@ ICMP
 Ctrl + C
 ```
 
----
 
 ## curl
 
@@ -435,7 +417,6 @@ curl https://example.com
 
 > 命令行浏览器
 
----
 
 ## 查看端口占用
 
@@ -447,7 +428,6 @@ lsof -i :8000
 
 用于判断哪个程序占用了端口。
 
----
 
 # 8 Shell 脚本
 
@@ -491,7 +471,6 @@ chmod +x system_info.sh
 
 脚本会输出系统信息。
 
----
 
 # Linux 实践实验
 
@@ -525,7 +504,6 @@ lsof -i :8000
 Ctrl + C
 ```
 
----
 
 # 阶段总结
 
@@ -556,4 +534,3 @@ Kubernetes
 
 下一步目标是学习 **Docker 容器技术**，理解容器运行原理并部署第一个服务。
 
----

@@ -24,7 +24,6 @@ errors2 "包路径"
 - 后续通过 `errors2.ErrorInvalidParams` 使用这个包里的内容
 - 一般是为了避免不同包之间出现重名
 
----
 
 ## 二、变量声明与赋值
 
@@ -56,7 +55,6 @@ conn, err := chat.WsUpgrader.Upgrade(...)
 - `err` 已经存在
 - 因为左边有新的 `conn`，所以仍然可以使用 `:=`
 
----
 
 ## 三、指针与结构体
 
@@ -100,7 +98,6 @@ ctx.ParseBodyToStruct(&req)
 - 直接取得这个结构体的地址
 - 把地址传给后续函数
 
----
 
 ## 四、空值与通用类型
 
@@ -124,7 +121,6 @@ return result, nil
 - 可以接收任意类型的数据
 - 所以 `(interface{}, error)` 的第一个返回值可以放不同类型的业务结果
 
----
 
 ## 五、多返回值与错误处理
 
@@ -215,7 +211,6 @@ return nil, chat.SetStoryLine(&form)
 - `chat.SetStoryLine(&form)` 本身返回的就是 `error`
 - 所以可以直接作为第二个返回值
 
----
 
 ## 六、控制逻辑与资源清理
 
@@ -245,7 +240,6 @@ defer src.Close()
 - 即使中途因为错误提前 `return`，也会执行关闭操作
 - 避免文件资源一直被占用
 
----
 
 ## 七、函数、字段和方法的调用
 
@@ -308,7 +302,6 @@ chat.WsUpgrader.Upgrade
 - 找到包里的 `WsUpgrader`
 - 调用它的 `Upgrade` 方法
 
----
 
 ## 八、字节数据
 

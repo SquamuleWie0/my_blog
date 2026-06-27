@@ -11,7 +11,6 @@ Python 是一门编程语言。
 - 操作数据库
 - 写测试代码
 
----
 
 # 2. 变量
 
@@ -38,7 +37,6 @@ resp = client.post("/app/completion")
 - `resp` 是变量名
 - 它里面装的是一个响应对象
 
----
 
 # 3. 常见数据类型
 
@@ -53,7 +51,6 @@ text = "hello"
 name = "user"  
 msg = "hello " + name
 ```
----
 
 ## 3.2 整数 `int`
 
@@ -61,21 +58,18 @@ msg = "hello " + name
 count = 10
 ```
 
----
 
 ## 3.3 浮点数 `float`
 ```python
 price = 9.9
 ```
 
----
 
 ## 3.4 布尔值 `bool`
 ```python
 is_success = True  
 is_error = False
 ```
----
 
 ## 3.5 空值 `None`
 
@@ -90,7 +84,6 @@ value = None
 if query is None:  
     ...
 ```
----
 
 # 4. 容器类型
 
@@ -111,7 +104,6 @@ for item in items:
     print(item)
 ```
 
----
 
 ## 4.2 字典 `dict`
 
@@ -140,7 +132,6 @@ user.get("name")
 data = request.json  
 message = data.get("message")
 ```
----
 
 # 5. 条件判断
 
@@ -171,7 +162,6 @@ else:
 if not message:  
     return {"code": "fail", "message": "message不能为空"}
 ````
----
 
 # 6. 循环
 
@@ -185,7 +175,6 @@ for item in [1, 2, 3]:
 
 遍历列表很常见。
 
----
 
 ## `while`
 
@@ -199,7 +188,6 @@ while i < 3:
 
 当前后端学习里优先掌握 `for` 就够了。
 
----
 
 # 7. 函数
 
@@ -241,7 +229,6 @@ def success(data=None, message="success"):  # 给参数设置默认值
         "data": data or {}  
     }
 ```
----
 
 # 8. 模块 module
 
@@ -278,7 +265,6 @@ Response
 
 > 模块是组织代码的最基本单位。
 
----
 
 # 9. 类 class
 
@@ -299,7 +285,6 @@ class Student:
 - 这个东西有哪些数据
 - 这个东西有哪些行为
 
----
 
 # 10. 对象 object
 
@@ -326,7 +311,6 @@ s1 = Student("user")
 - `client`
 - 数据库模型实例
 
----
 
 # 11. 属性 attribute
 
@@ -346,7 +330,6 @@ resp.status_code
 
 > 属性就是对象“带着的数据”。
 
----
 
 # 12. 方法 method
 
@@ -366,7 +349,6 @@ s1.introduce()
 
 > 方法就是对象能做的动作。
 
----
 
 # 13. 成员 member
 
@@ -379,7 +361,6 @@ s1.introduce()
 
 > 类或对象里面定义的东西，都可以叫成员。
 
----
 
 # 14. `self` 是什么
 
@@ -411,7 +392,6 @@ s2 = Student("tom")
 
 说明每个对象都有自己的数据。
 
----
 
 # 15. `__init__` 是什么
 
@@ -430,7 +410,6 @@ s1 = Student("user")
 
 创建 `s1` 的时候，`__init__` 会自动运行。
 
----
 
 # 16. `super()` 是什么
 
@@ -450,7 +429,6 @@ class Http(Flask):
 
 当前阶段先理解到这层就够。
 
----
 
 # 17. 点号 `.` 是什么
 
@@ -488,7 +466,6 @@ HttpCode.VALIDATE_ERROR
 - `HttpCode`：类
 - `VALIDATE_ERROR`：类里的成员/常量
 
----
 
 # 18. 属性和方法怎么区分
 
@@ -512,7 +489,6 @@ data.get("code")
 
 > 没括号通常是属性，有括号通常是在调用函数/方法。
 
----
 
 # 19. 函数 和 方法的区别
 
@@ -532,7 +508,6 @@ class Student:
         print(self.name)
 ```
 
----
 
 # 20. 异常处理
 
@@ -559,7 +534,6 @@ try:
 except Exception as e:  
     return {"code": "fail", "message": str(e), "data": {}}
 ```
----
 
 # 21. `isinstance()` 是什么
 ```python
@@ -574,7 +548,6 @@ isinstance(error, CustomException)
 - 判断是不是某种对象
 - 判断是不是某种异常类型
 
----
 
 # 22. 调用、定义、执行顺序的一个核心理解
 
@@ -594,7 +567,6 @@ class A:
 这是可以的。  
 因为真正执行 `x()` 时，`y()` 已经作为类的方法存在了。
 
----
 
 # 23. JSON 和 dict 的关系
 
@@ -615,7 +587,6 @@ class A:
 data = request.json  
 message = data.get("message")
 ```
----
 
 # 24. 面向 Flask / 后端最常见的 Python 场景
 
@@ -634,7 +605,6 @@ query = data.get("query")
 - dict
 - `.get()`
 
----
 
 ## 24.2 参数判断
 ```python
@@ -642,7 +612,6 @@ if query is None:
     ...
 ```
 
----
 
 ## 24.3 返回统一响应
 ```python
@@ -653,7 +622,6 @@ return {
 }
 ```
 
----
 
 ## 24.4 调对象的方法
 
@@ -663,7 +631,6 @@ return {
 resp = client.post("/app/completion", json={"query": None})
 ```
 
----
 
 ## 24.5 断言测试结果
 

@@ -2,7 +2,6 @@
 
 > 当一个 Agent 不够用时,要不要上多 Agent?怎么上?
 
----
 
 ## 一、为什么考虑 Multi-Agent
 
@@ -25,7 +24,6 @@
 >
 > 多 Agent 不一定比单 Agent 好。有些任务适合,有些反而被协调成本拖累。
 
----
 
 ## 二、四种 MAS 架构
 
@@ -53,7 +51,6 @@ Agent C ──→ 方案 3
 - 浪费算力(3 个 Agent 算 3 遍)
 - 任务必须有"可比性",不能完全独立
 
----
 
 ### 2. Decentralized (去中心化)
 
@@ -81,7 +78,6 @@ Agent A ←──→ Agent B
 - 难以调试(没有 single source of truth)
 - 结果可能发散(没有统一约束)
 
----
 
 ### 3. Centralized (中心化)
 
@@ -109,7 +105,6 @@ Agent A ←──→ Agent B
 - 中心 Agent 的 prompt 容易变成"巨型 if-else"
 - 拆任务逻辑写在 orchestrator 里,容易膨胀
 
----
 
 ### 4. Hybrid (混合)
 
@@ -138,7 +133,6 @@ Agent A ←──→ Agent B
 - **最实用,但实现也最复杂**
 - 调试难:既要 trace 中心,又要 trace 局部
 
----
 
 ## 三、怎么选?决策表
 
@@ -160,7 +154,6 @@ Agent A ←──→ Agent B
 >
 > 任务**多角色且局部有内部协作** → Hybrid
 
----
 
 ## 四、协调成本:MAS 的隐藏税
 
@@ -183,7 +176,6 @@ MAS 的真正难点不是写多个 Agent,**是让它们协调**。
 
 每多一个 Agent,这些问题就多一份。**实际项目里,协调代码往往比 Agent 本身还多**。
 
----
 
 ## 五、RopeMind 选哪种?
 
@@ -206,7 +198,6 @@ RopeMind 是 Agentic RAG 工作台,任务是"理解仓库 + 回答问题"。
 
 为什么不选纯 Independent? 因为 RopeMind 不是"选最优",是"按顺序做"。
 
----
 
 ## 六、反模式:什么时候 MAS 反而拖后腿
 
@@ -218,7 +209,6 @@ RopeMind 是 Agentic RAG 工作台,任务是"理解仓库 + 回答问题"。
 
 **真正需要 MAS 的场景,通常是产品已经稳定、单 Agent 触到天花板之后**。不要一上来就 MAS。
 
----
 
 ## 七、一句话总结
 

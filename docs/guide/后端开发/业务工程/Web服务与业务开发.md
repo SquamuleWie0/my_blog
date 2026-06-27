@@ -24,7 +24,6 @@
 - JSON 是请求体的一种常见格式
 - 请求体也可能是普通表单、文件上传或者二进制数据
 
----
 
 ## 二、请求参数的来源
 
@@ -55,7 +54,6 @@
 - 通过表单格式提交的数据
 - 可以同时传普通文本参数和上传文件
 
----
 
 ## 三、JSON 与 Go 结构体
 
@@ -109,7 +107,6 @@ func DeleteContext(ctx *http.Context) (interface{}, error) {
 - 再把需要继续处理的数据整理进结构体
 - Service 层通过结构体获取这次业务需要的参数
 
----
 
 ## 四、HTTP Context
 
@@ -135,7 +132,6 @@ func DeleteContext(ctx *http.Context) (interface{}, error) {
 - 业务 Context：表示聊天会话、任务状态等业务数据
 - 两者都叫 Context，但负责的内容不同
 
----
 
 ## 五、路由与 API 函数
 
@@ -158,7 +154,6 @@ func DeleteContext(ctx *http.Context) (interface{}, error) {
 - `PUT`：更新数据
 - `DELETE`：删除数据
 
----
 
 ## 六、Swagger 接口文档
 
@@ -181,7 +176,6 @@ func DeleteContext(ctx *http.Context) (interface{}, error) {
 - 真正决定 URL 调用哪个函数的，是项目中的路由注册代码
 - Swagger 描述接口，Router 代码真正连接接口
 
----
 
 ## 七、API 层与 Service 层
 
@@ -212,7 +206,6 @@ func DeleteContext(ctx *http.Context) (interface{}, error) {
 - 它主要负责为 Service 层准备正确、可信、格式统一的参数
 - 然后调用 Service 层完成真正的业务处理
 
----
 
 ## 八、调用不同包中的函数
 
@@ -239,7 +232,6 @@ func SetStoryLine(ctx *http.Context) (interface{}, error) {
 - `chat.SetStoryLine(&form)` 是 Service 包中的业务函数
 - API 层准备参数后，再调用 Service 层完成设置故事线的业务
 
----
 
 ## 九、可信用户身份注入
 
@@ -273,7 +265,6 @@ req.UserId = ctx.UserId()
 - 常用于鉴权、日志、跨域和请求信息记录
 - 多个 API 都需要的公共逻辑，可以放进中间件统一完成
 
----
 
 ## 十、参数校验与默认值
 
@@ -301,7 +292,6 @@ language := ctx.DefaultPostForm("language", "zh-CN")
 - 用户 ID、服务器配置等可信信息由后端补充
 - API 层把这些信息整理完整后，再传给 Service 层
 
----
 
 ## 十一、HTTP 状态与项目错误
 
@@ -327,7 +317,6 @@ language := ctx.DefaultPostForm("language", "zh-CN")
 - 后面的业务逻辑不会继续执行
 - 防止错误数据继续向后传递
 
----
 
 ## 十二、一次请求的完整处理流程
 
