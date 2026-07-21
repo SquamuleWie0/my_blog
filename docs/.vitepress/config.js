@@ -4,7 +4,7 @@ import sidebar from './sidebar.js';
 export default defineConfig({
   title: 'wie0的博客',
   description: '记录学习笔记、项目经验与技术总结的博客',
-  base: '/my_blog/',
+  base: process.env.VITEPRESS_BASE ?? '/my_blog/',
 
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],

@@ -95,7 +95,8 @@ export default {
       items: [
         { text: 'gRPC', link: '/guide/Agent/gRPC/' },
         { text: 'gRPC 微服务接入', link: '/guide/Agent/gRPC/gRPC 微服务接入' },
-        { text: '从 HTTP 接口迁移到 gRPC', link: '/guide/Agent/gRPC/从 HTTP 接口迁移到 gRPC' }
+        { text: '从 HTTP 接口迁移到 gRPC', link: '/guide/Agent/gRPC/从 HTTP 接口迁移到 gRPC' },
+        { text: 'gRPC 鉴权', link: '/guide/Agent/gRPC/gRPC 鉴权：调用方认证与用户身份解析' }
       ]
     }
   ],
