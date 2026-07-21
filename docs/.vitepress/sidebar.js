@@ -13,7 +13,8 @@ export default {
       items: [
         { text: 'AI Agent', link: '/guide/Agent/AI Agent/AI Agent' },
         { text: 'Multi Agent', link: '/guide/Agent/AI Agent/multi-agent' },
-        { text: 'AI Agent 应用开发学习复盘', link: '/guide/Agent/AI Agent/AI Agent 应用开发学习复盘' }
+        { text: 'AI Agent 应用开发学习复盘', link: '/guide/Agent/AI Agent/AI Agent 应用开发学习复盘' },
+        { text: 'gRPC', link: '/guide/Agent/gRPC/' }
       ]
     },
     {
@@ -85,6 +86,16 @@ export default {
         { text: 'AI Agent', link: '/guide/Agent/AI Agent/AI Agent' },
         { text: 'Multi Agent', link: '/guide/Agent/AI Agent/multi-agent' },
         { text: 'AI Agent 应用开发学习复盘', link: '/guide/Agent/AI Agent/AI Agent 应用开发学习复盘' }
+      ]
+    },
+    {
+      text: 'gRPC',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        { text: 'gRPC', link: '/guide/Agent/gRPC/' },
+        { text: 'gRPC 微服务接入', link: '/guide/Agent/gRPC/gRPC 微服务接入' },
+        { text: '从 HTTP 接口迁移到 gRPC', link: '/guide/Agent/gRPC/从 HTTP 接口迁移到 gRPC' }
       ]
     }
   ],
