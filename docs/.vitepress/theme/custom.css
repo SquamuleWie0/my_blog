@@ -39,14 +39,17 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background: linear-gradient(180deg, #fcfcfd 0%, #f8f9fb 100%);
+  overflow-x: hidden;
 }
 
 .dark body {
   background: linear-gradient(180deg, #181b21 0%, #1c2027 100%);
+  overflow-x: hidden;
 }
 
 /* 顶部导航 */
@@ -296,8 +299,27 @@ body {
   background: transparent;
 }
 
+/*
+ * 食记页需要比 VitePress 默认更宽的内容区（默认 .content 被压在 784px）
+ * 这里把 layout 链强制拉宽到 1720，让卡片能自然占满父容器，无需靠 calc(100vw) 撑出
+ */
+.VPDoc .container,
+.VPDoc:not(.has-sidebar) .container {
+  max-width: 1784px !important;
+}
+
+.VPDoc .content,
+.VPDoc:not(.has-sidebar) .content {
+  max-width: 1720px !important;
+}
+
 .VPDoc .content-container {
-  max-width: 860px;
+  max-width: 1720px !important;
+  padding: 0 !important;
+}
+
+.VPDoc .content-container {
+  max-width: 1720px !important;
 }
 
 .vp-doc p {

@@ -1,11 +1,19 @@
 // 手写侧边栏，参考 Obsidian 文件树风格
-// - 进入每个 /guide/xxx/ 路径，显示该分区的完整嵌套树
-// - 进入首页 /，显示 6 个分区的总览（默认折叠）
+// - 进入每个 /guide/xxx/ 或 /weekly/ 路径，显示该分区的完整嵌套树
+// - 进入首页 /，显示各分区的总览（默认折叠）
 // - 所有分组 collapsible: true，默认 collapsed: false（可自由折叠）
 
 export default {
   // ============ 首页总览 ============
   '/': [
+    {
+      text: '周报',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        { text: '2026 春夏技术成长周报', link: '/weekly/' }
+      ]
+    },
     {
       text: 'Agent',
       collapsible: true,
@@ -67,10 +75,21 @@ export default {
       collapsible: true,
       collapsed: true,
       items: [
-        { text: '春札记', link: '/guide/杂札/春札记' },
         { text: '断舍离之后', link: '/guide/杂札/断舍离之后' },
         { text: '年末的时候想什么', link: '/guide/杂札/年末的时候想什么' },
         { text: '什么是真正的成长', link: '/guide/杂札/什么是真正的成长' }
+      ]
+    }
+  ],
+
+  // ============ 周报分区 ============
+  '/weekly/': [
+    {
+      text: '周报',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        { text: '2026 春夏技术成长周报', link: '/weekly/' }
       ]
     }
   ],
@@ -220,7 +239,6 @@ export default {
       collapsible: true,
       collapsed: false,
       items: [
-        { text: '春札记', link: '/guide/杂札/春札记' },
         { text: '断舍离之后', link: '/guide/杂札/断舍离之后' },
         { text: '年末的时候想什么', link: '/guide/杂札/年末的时候想什么' },
         { text: '什么是真正的成长', link: '/guide/杂札/什么是真正的成长' }

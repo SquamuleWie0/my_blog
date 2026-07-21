@@ -27,11 +27,13 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
+      { text: '周报', link: '/weekly/' },
       { text: 'Agent', link: '/guide/Agent/' },
       { text: '后端开发', link: '/guide/后端开发/' },
       { text: '工程与部署', link: '/guide/工程与部署/' },
       { text: '课程笔记', link: '/guide/课程笔记/' },
-      { text: '杂札', link: '/guide/杂札/' }
+      { text: '杂札', link: '/guide/杂札/' },
+      { text: '食记', link: '/food/' }
     ],
     sidebar,
     outline: {

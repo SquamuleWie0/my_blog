@@ -11,7 +11,7 @@ sidebar: true
     答案会在不知不觉中悄然浮现
   </p>
   <p>
-    <a href="/my_blog/guide/Agent/AI%20Agent/AI%20Agent" style="display: inline-block; padding: 0.45rem 1.1rem; background: linear-gradient(135deg, #e8a0bd, #f4c1d4); color: #ffffff; border-radius: 999px; font-size: 0.9rem; font-weight: 500; margin-right: 0.5rem; text-decoration: none; box-shadow: 0 3px 10px rgba(232, 160, 189, 0.3);">开始阅读 →</a>
+    <a href="./guide/Agent/AI%20Agent/AI%20Agent.html" style="display: inline-block; padding: 0.45rem 1.1rem; background: linear-gradient(135deg, #e8a0bd, #f4c1d4); color: #ffffff; border-radius: 999px; font-size: 0.9rem; font-weight: 500; margin-right: 0.5rem; text-decoration: none; box-shadow: 0 3px 10px rgba(232, 160, 189, 0.3);">开始阅读 →</a>
     <a href="https://github.com/SquamuleWie0" style="display: inline-block; padding: 0.45rem 1.1rem; background: transparent; color: #d77da5; border: 1.5px solid #e8a0bd; border-radius: 999px; font-size: 0.9rem; font-weight: 500; text-decoration: none;">GitHub →</a>
   </p>
 </div>
