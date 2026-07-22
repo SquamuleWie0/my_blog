@@ -97,7 +97,7 @@ import { withBase } from 'vitepress'
 <div>
 <p class="project-kind">主项目组 / Multi-Agent Creation System</p>
 <h3>Lunetale · 月之传说</h3>
-<p class="project-desc">围绕 Lunetale 的创作者端、用户端、GVA 主后端和 Python Agent 微服务做联调：创作者端承接世界设定、剧情结构、NPC、场景、任务等编辑；主后端通过 gRPC / Proto 调用 Agent 微服务，把剧本生成、对话、记忆、statePatch 和前端预览链路接起来。</p>
+<p class="project-desc">围绕 Lunetale 的创作者端、游戏中心、GVA 主后端和 Python Agent 微服务做联调：创作者端承接世界设定、剧情结构、NPC、场景、任务和视觉资产编辑；游戏中心接入对话 Agent，承接玩家与剧情世界的核心互动；主后端通过 gRPC / Proto 调用剧本创作 Multi-Agent、NPC 对话、记忆和状态服务，把创作、游玩预览和世界状态链路接起来。</p>
 </div>
 </div>
 
@@ -112,28 +112,28 @@ import { withBase } from 'vitepress'
 
 <div class="agent-showcase">
 <span class="agent-card">
-<strong>CreatorService.ScriptChat</strong>
-<em>v2 创作入口，承接 workflowId / scriptId / contextId，返回 replyPayload 和 statePatch</em>
+<strong>剧本与图像生成 Agent</strong>
+<em>围绕创作者输入、世界设定、角色关系、剧情结构和图片生成，产出可继续编辑的剧本与视觉资产</em>
 </span>
 <span class="agent-card">
-<strong>SingleAgentService.Chat</strong>
-<em>v1 单智能体对话服务，把流式 SSE 聚合成 unary reply 供 Go 后端调用</em>
+<strong>NPC 对话 Agent</strong>
+<em>基于角色设定、当前剧情和历史对话生成多 NPC 互动内容，降低角色口吻漂移和上下文断裂</em>
 </span>
 <span class="agent-card">
-<strong>Game Prompt Orchestrator</strong>
-<em>把 history、worldState、runtimeState、NPC 选择和 maxTurns 组织进生成链路</em>
+<strong>多 Agent 创作流编排</strong>
+<em>在剧本生成、NPC 对话、图片生成、记忆和状态之间做路由，解决单一 Agent 难以覆盖完整创作流程的问题</em>
 </span>
 <span class="agent-card">
-<strong>Memory Service</strong>
-<em>围绕 memory / mem0 做会话记忆、上下文承接和后续长期记忆扩展</em>
+<strong>gRPC / Proto 微服务接入</strong>
+<em>把 Python Agent 服务接入 Go / GVA 主后端，处理跨语言调用、鉴权、请求结构和返回结构</em>
 </span>
 <span class="agent-card">
-<strong>Prompt Assembler</strong>
-<em>区分稳定规则与动态状态，服务结构化输出和 prompt caching 优化</em>
+<strong>生成稳定性工程</strong>
+<em>把规则、上下文、剧情状态和缓存策略拆层管理，降低长上下文干扰、角色漂移和重复生成成本</em>
 </span>
 <span class="agent-card">
-<strong>Structured Render</strong>
-<em>用户端处理 AI Chat 的结构化 JSON、type 渲染和页面预览承接</em>
+<strong>Memory / 长期上下文</strong>
+<em>沉淀会话、角色和世界相关记忆，支撑多轮互动里的信息延续和长期玩法扩展</em>
 </span>
 </div>
 </div>
