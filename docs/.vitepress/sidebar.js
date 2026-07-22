@@ -19,10 +19,11 @@ export default {
       collapsible: true,
       collapsed: true,
       items: [
-        { text: 'AI Agent', link: '/guide/Agent/AI Agent/AI Agent' },
-        { text: 'Multi Agent', link: '/guide/Agent/AI Agent/multi-agent' },
-        { text: 'AI Agent 应用开发学习复盘', link: '/guide/Agent/AI Agent/AI Agent 应用开发学习复盘' },
-        { text: 'gRPC', link: '/guide/Agent/gRPC/' }
+        { text: '总览', link: '/guide/Agent/' },
+        { text: 'LLM 基础', link: '/guide/Agent/LLM基础/LLM基础' },
+        { text: 'Agent Core', link: '/guide/Agent/Agent Core/Agent Core' },
+        { text: '工程化接入', link: '/guide/Agent/集成与服务化/集成部署' },
+        { text: '评估与复盘', link: '/guide/Agent/评估与运维/Agent评估与持续进化' }
       ]
     },
     {
@@ -84,37 +85,56 @@ export default {
 
   // ============ 周报分区 ============
   '/weekly/': [
-    {
-      text: '周报',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: '2026 春夏技术成长周报', link: '/weekly/' }
-      ]
-    }
+    { text: '周报', link: '/weekly/' }
   ],
 
   // ============ Agent 分区（嵌套树）============
   '/guide/Agent/': [
     {
-      text: 'AI Agent',
-      collapsible: true,
-      collapsed: false,
+      text: 'Agent',
+      link: '/guide/Agent/',
       items: [
-        { text: 'AI Agent', link: '/guide/Agent/AI Agent/AI Agent' },
-        { text: 'Multi Agent', link: '/guide/Agent/AI Agent/multi-agent' },
-        { text: 'AI Agent 应用开发学习复盘', link: '/guide/Agent/AI Agent/AI Agent 应用开发学习复盘' }
-      ]
-    },
-    {
-      text: 'gRPC',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: 'gRPC', link: '/guide/Agent/gRPC/' },
-        { text: 'gRPC 微服务接入', link: '/guide/Agent/gRPC/gRPC 微服务接入' },
-        { text: '从 HTTP 接口迁移到 gRPC', link: '/guide/Agent/gRPC/从 HTTP 接口迁移到 gRPC' },
-        { text: 'gRPC 鉴权', link: '/guide/Agent/gRPC/gRPC 鉴权：调用方认证与用户身份解析' }
+        {
+          text: 'LLM 基础',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            { text: 'LLM 基础', link: '/guide/Agent/LLM基础/LLM基础' },
+            { text: 'LLM 生态', link: '/guide/Agent/LLM基础/LLM生态' }
+          ]
+        },
+        {
+          text: 'Agent Core',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            { text: 'Agent 为何存在', link: '/guide/Agent/Agent Core/Agent为何存在' },
+            { text: 'Agent Core', link: '/guide/Agent/Agent Core/Agent Core' },
+            { text: 'ReAct', link: '/guide/Agent/Agent Core/ReAct' },
+            { text: 'Multi-Agent', link: '/guide/Agent/Agent Core/multi-agent' }
+          ]
+        },
+        {
+          text: '工程化接入',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            { text: '集成 / 部署', link: '/guide/Agent/集成与服务化/集成部署' },
+            { text: 'gRPC', link: '/guide/Agent/gRPC/' },
+            { text: 'gRPC 微服务接入', link: '/guide/Agent/gRPC/gRPC 微服务接入' },
+            { text: '从 HTTP 接口迁移到 gRPC', link: '/guide/Agent/gRPC/从 HTTP 接口迁移到 gRPC' },
+            { text: 'gRPC 鉴权', link: '/guide/Agent/gRPC/gRPC 鉴权：调用方认证与用户身份解析' }
+          ]
+        },
+        {
+          text: '评估与复盘',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            { text: 'Agent 评估与持续进化', link: '/guide/Agent/评估与运维/Agent评估与持续进化' },
+            { text: 'AI Agent 应用开发与 Python 后端开发学习复盘', link: '/guide/Agent/项目复盘/AI Agent 应用开发与 Python 后端开发学习复盘' }
+          ]
+        }
       ]
     }
   ],
@@ -122,46 +142,45 @@ export default {
   // ============ 后端开发分区（嵌套树）============
   '/guide/后端开发/': [
     {
-      text: '业务工程',
-      collapsible: true,
-      collapsed: false,
+      text: '后端开发',
+      link: '/guide/后端开发/',
       items: [
-        { text: '后端工程与基础设施', link: '/guide/后端开发/业务工程/后端工程与基础设施' },
-        { text: 'Web 服务与业务开发', link: '/guide/后端开发/业务工程/Web服务与业务开发' }
-      ]
-    },
-    {
-      text: '计算机网络',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: '计算机网络基础', link: '/guide/后端开发/计算机网络基础' }
-      ]
-    },
-    {
-      text: '能力路线',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: '后端 + 云原生能力路线', link: '/guide/后端开发/能力路线/后端+云原生能力路线' }
-      ]
-    },
-    {
-      text: 'AI Agent 后端',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: 'AI Agent（后端视角）', link: '/guide/后端开发/AI Agent后端/AI Agent' },
-        { text: 'Python 后端学习复盘', link: '/guide/后端开发/AI Agent后端/Python 后端学习复盘' }
-      ]
-    },
-    {
-      text: '语言基础',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: 'Go 语言基础', link: '/guide/后端开发/语言基础/Go语言基础' },
-        { text: 'Python 语言与后端开发', link: '/guide/后端开发/语言基础/Python语言与后端开发' }
+        {
+          text: '业务工程',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            { text: '后端工程与基础设施', link: '/guide/后端开发/业务工程/后端工程与基础设施' },
+            { text: 'Web 服务与业务开发', link: '/guide/后端开发/业务工程/Web服务与业务开发' }
+          ]
+        },
+        {
+          text: '基础与路线',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            { text: '计算机网络基础', link: '/guide/后端开发/计算机网络基础' },
+            { text: '后端 + 云原生能力路线', link: '/guide/后端开发/能力路线/后端+云原生能力路线' }
+          ]
+        },
+        {
+          text: 'AI Agent 后端',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            { text: 'AI Agent（后端视角）', link: '/guide/后端开发/AI Agent后端/AI Agent' },
+            { text: 'Python 后端学习复盘', link: '/guide/后端开发/AI Agent后端/Python 后端学习复盘' }
+          ]
+        },
+        {
+          text: '语言基础',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            { text: 'Go 语言基础', link: '/guide/后端开发/语言基础/Go语言基础' },
+            { text: 'Python 语言与后端开发', link: '/guide/后端开发/语言基础/Python语言与后端开发' }
+          ]
+        }
       ]
     }
   ],
@@ -169,45 +188,37 @@ export default {
   // ============ 工程与部署分区（嵌套树）============
   '/guide/工程与部署/': [
     {
-      text: '工程工具',
-      collapsible: true,
-      collapsed: false,
+      text: '工程与部署',
+      link: '/guide/工程与部署/',
       items: [
         {
-          text: 'Git',
+          text: '工程工具',
           collapsible: true,
           collapsed: false,
           items: [
-            { text: 'Git', link: '/guide/工程与部署/工程工具/Git/Git' },
-            { text: 'Obsidian 同步到 GitHub', link: '/guide/工程与部署/工程工具/Git/Obidians同步到GitHub' }
+            {
+              text: 'Git',
+              collapsible: true,
+              collapsed: false,
+              items: [
+                { text: 'Git', link: '/guide/工程与部署/工程工具/Git/Git' },
+                { text: 'Obsidian 同步到 GitHub', link: '/guide/工程与部署/工程工具/Git/Obidians同步到GitHub' }
+              ]
+            },
+            { text: 'Shell', link: '/guide/工程与部署/工程工具/shell' },
+            { text: 'MIT Missing Semester', link: '/guide/工程与部署/工程工具/MIT Missing Semester' }
           ]
         },
-        { text: 'Shell', link: '/guide/工程与部署/工程工具/shell' },
-        { text: 'MIT Missing Semester', link: '/guide/工程与部署/工程工具/MIT Missing Semester' }
-      ]
-    },
-    {
-      text: 'Linux',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: 'Linux', link: '/guide/工程与部署/Linux' }
-      ]
-    },
-    {
-      text: 'Docker',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: 'Docker', link: '/guide/工程与部署/Docker/Docker' }
-      ]
-    },
-    {
-      text: 'macOS',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        { text: 'macOS 装 Win11 虚拟机', link: '/guide/工程与部署/macOS装win11虚拟机' }
+        {
+          text: '环境与部署',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            { text: 'Linux', link: '/guide/工程与部署/Linux' },
+            { text: 'Docker', link: '/guide/工程与部署/Docker/Docker' },
+            { text: 'macOS 装 Win11 虚拟机', link: '/guide/工程与部署/macOS装win11虚拟机' }
+          ]
+        }
       ]
     }
   ],
@@ -216,8 +227,7 @@ export default {
   '/guide/课程笔记/': [
     {
       text: '课程笔记',
-      collapsible: true,
-      collapsed: false,
+      link: '/guide/课程笔记/',
       items: [
         { text: '大学物理', link: '/guide/课程笔记/大学物理' },
         { text: '嵌入式开发与单片机', link: '/guide/课程笔记/嵌入式开发与单片机' },
@@ -236,8 +246,7 @@ export default {
   '/guide/杂札/': [
     {
       text: '杂札',
-      collapsible: true,
-      collapsed: false,
+      link: '/guide/杂札/',
       items: [
         { text: '断舍离之后', link: '/guide/杂札/断舍离之后' },
         { text: '年末的时候想什么', link: '/guide/杂札/年末的时候想什么' },
