@@ -944,6 +944,114 @@ body {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+.weekly-growth-path {
+  margin-top: 18px;
+  padding: 20px 24px 22px;
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+}
+
+.growth-path-intro {
+  margin: 0 0 16px !important;
+  color: var(--vp-c-text-1) !important;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.55 !important;
+}
+
+.growth-path-track {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  padding-left: 24px;
+}
+
+.growth-path-track::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 6px;
+  width: 1px;
+  background: linear-gradient(180deg, var(--vp-c-brand-1), rgba(72, 166, 167, 0.6), rgba(196, 154, 67, 0.54));
+}
+
+.growth-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.growth-step::before {
+  content: '';
+  position: absolute;
+  top: 0.52em;
+  left: -23px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--vp-c-bg-soft);
+  border: 3px solid var(--vp-c-brand-1);
+}
+
+.growth-step:nth-child(2)::before {
+  border-color: #48a6a7;
+}
+
+.growth-step:nth-child(3)::before {
+  border-color: #c49a43;
+}
+
+.growth-step:nth-child(4)::before {
+  border-color: #7c8aa5;
+}
+
+.growth-step:nth-child(5)::before {
+  border-color: var(--vp-c-brand-1);
+}
+
+.growth-step strong {
+  color: var(--vp-c-text-1);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.growth-step em {
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+  font-style: normal;
+  line-height: 1.75;
+}
+
+.growth-path-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.growth-path-summary span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--vp-c-text-2);
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.78rem;
+}
+
+.dark .growth-path-summary span {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 .home-section {
   margin-top: 18px;
 }

@@ -47,6 +47,36 @@ import { withBase } from 'vitepress'
 <span>GVA 对接</span>
 </span>
 </a>
+<div class="weekly-growth-path" aria-label="周报成长线索">
+<p class="growth-path-intro">生长线</p>
+<div class="growth-path-track">
+<span class="growth-step">
+<strong>3 月</strong>
+<em>从 Shell、Git、Docker 和服务器部署里，第一次理解一个 Web 系统怎么跑起来。</em>
+</span>
+<span class="growth-step">
+<strong>4 月</strong>
+<em>开始接触 Python 后端、pytest、异常处理和 LangChain，慢慢确定 Agent 是主线。</em>
+</span>
+<span class="growth-step">
+<strong>5 月</strong>
+<em>用 RepoMind 做项目，理解 RAG、LangGraph 和 Agentic RAG，开始按用户、流程、模块和系统结构想问题。</em>
+</span>
+<span class="growth-step">
+<strong>6 月</strong>
+<em>做 MergeGuard-AI，在限期交付里练需求收敛、架构拆分、演示表达和结果交付。</em>
+</span>
+<span class="growth-step">
+<strong>7 月</strong>
+<em>进入 Lunetale 真实项目节奏，处理 Agent 微服务、gRPC、GVA 主后端、前端预览和版本收尾。</em>
+</span>
+</div>
+<div class="growth-path-summary">
+<span>主线：AI 应用工程化 / Agent 开发</span>
+<span>底座：后端、数据库、网络、gRPC、服务部署</span>
+<span>方法：真实项目驱动 + 系统补课 + 源码阅读 + 复盘沉淀</span>
+</div>
+</div>
 </section>
 
 <section id="work" class="home-section">
