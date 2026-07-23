@@ -37,14 +37,14 @@ import { withBase } from 'vitepress'
 <span class="weekly-card-note">2026 春夏</span>
 </span>
 <span class="weekly-card-title">2026 春夏 · 工程与 Agent 周报</span>
-<span class="weekly-card-desc">记录小白成长来时路：从慢慢构建认知，到在开发中接触后端、Agent、服务联调和部署里的真实问题。为伟大的小白时期留痕 (ง •̀_•́)ง</span>
+<span class="weekly-card-desc">为伟大的小白时期留痕 (ง •̀_•́)ง<br>记录小白成长来时路：从慢慢构建认知，到在开发中接触后端、Agent、服务联调和部署里的真实问题。</span>
 <span class="weekly-card-tags">
-<span>博客部署</span>
-<span>Agent 微服务联调</span>
-<span>gRPC / Proto</span>
-<span>Prompt Caching</span>
-<span>作者预览优化</span>
-<span>GVA 对接</span>
+<span>计算机基础</span>
+<span>后端体系</span>
+<span>Agent 系统</span>
+<span>多端联调</span>
+<span>工程部署</span>
+<span>复盘沉淀</span>
 </span>
 </a>
 <div class="weekly-growth-path" aria-label="周报成长线索">
