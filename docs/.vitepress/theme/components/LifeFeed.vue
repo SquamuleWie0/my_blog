@@ -27,6 +27,11 @@ const props = withDefaults(defineProps<{
 
 const previewImages = ref<LifeImage[]>([])
 const previewIndex = ref(0)
+const touchStartX = ref(0)
+const touchStartY = ref(0)
+const touchLastX = ref(0)
+const touchLastY = ref(0)
+const isTouchingPreview = ref(false)
 
 const currentPreview = computed(() => previewImages.value[previewIndex.value])
 
@@ -82,6 +87,51 @@ function showNext() {
   const count = previewImages.value.length
   if (!count) return
   previewIndex.value = (previewIndex.value + 1) % count
+}
+
+function resetPreviewTouch() {
+  isTouchingPreview.value = false
+  touchStartX.value = 0
+  touchStartY.value = 0
+  touchLastX.value = 0
+  touchLastY.value = 0
+}
+
+function handlePreviewTouchStart(event: TouchEvent) {
+  if (!currentPreview.value || event.touches.length !== 1) return
+
+  const touch = event.touches[0]
+  isTouchingPreview.value = true
+  touchStartX.value = touch.clientX
+  touchStartY.value = touch.clientY
+  touchLastX.value = touch.clientX
+  touchLastY.value = touch.clientY
+}
+
+function handlePreviewTouchMove(event: TouchEvent) {
+  if (!isTouchingPreview.value || event.touches.length !== 1) return
+
+  const touch = event.touches[0]
+  touchLastX.value = touch.clientX
+  touchLastY.value = touch.clientY
+}
+
+function handlePreviewTouchEnd() {
+  if (!isTouchingPreview.value || previewImages.value.length <= 1) {
+    resetPreviewTouch()
+    return
+  }
+
+  const deltaX = touchLastX.value - touchStartX.value
+  const deltaY = touchLastY.value - touchStartY.value
+  const absX = Math.abs(deltaX)
+  const absY = Math.abs(deltaY)
+
+  resetPreviewTouch()
+
+  if (absX < 44 || absX < absY * 1.2) return
+  if (deltaX > 0) showPrev()
+  else showNext()
 }
 
 function handlePreviewKeydown(event: KeyboardEvent) {
@@ -174,7 +224,15 @@ onBeforeUnmount(() => {
     <div v-else class="life-empty">这里先留空。</div>
 
     <Teleport to="body">
-      <div v-if="currentPreview" class="life-preview" @click.self="closePreview">
+      <div
+        v-if="currentPreview"
+        class="life-preview"
+        @click.self="closePreview"
+        @touchstart.passive="handlePreviewTouchStart"
+        @touchmove.passive="handlePreviewTouchMove"
+        @touchend="handlePreviewTouchEnd"
+        @touchcancel="resetPreviewTouch"
+      >
         <button class="life-preview-close" type="button" aria-label="关闭预览" @click="closePreview">×</button>
         <button
           v-if="previewImages.length > 1"
@@ -468,6 +526,8 @@ onBeforeUnmount(() => {
   place-items: center;
   padding: 48px 68px;
   background: rgba(0, 0, 0, 0.82);
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .life-preview img {
@@ -477,6 +537,7 @@ onBeforeUnmount(() => {
   border-radius: 8px;
   object-fit: contain;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+  -webkit-user-drag: none;
 }
 
 .life-preview-close,
