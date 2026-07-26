@@ -15,6 +15,14 @@ export default {
       ]
     },
     {
+      text: '生活',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        { text: '途中', link: '/life/' }
+      ]
+    },
+    {
       text: 'Agent',
       collapsible: true,
       collapsed: true,

@@ -17,6 +17,7 @@ import { withBase } from 'vitepress'
 <div class="home-hero-actions">
 <a class="home-primary-action" href="#work">查看项目</a>
 <a class="home-secondary-action" href="https://github.com/SquamuleWie0">GitHub</a>
+<a class="home-secondary-action" href="./life/">生活</a>
 </div>
 </div>
 <div class="home-hero-meta" aria-label="当前方向">
