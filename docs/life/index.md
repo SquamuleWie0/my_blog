@@ -9,6 +9,25 @@ import LifeFeed from '../.vitepress/theme/components/LifeFeed.vue'
 
 const posts = [
   {
+    date: '2026-07-27',
+    time: '20:06',
+    text: [
+      '今天累累的，想巧克力。'
+    ],
+    images: [
+      { src: '/life/2026-07-27-cute.jpg', alt: '可爱吗' }
+    ]
+  },
+  {
+    date: '2026-07-27',
+    time: '18:12',
+    text: [
+      '不知道为什么重叠着耳机里放的歌夹杂着暴雨和妖风',
+      '想起一句话：风浪越大鱼越贵。',
+      '是什么道理呢'
+    ]
+  },
+  {
     date: '2026-07-25',
     time: '21:22',
     text: [

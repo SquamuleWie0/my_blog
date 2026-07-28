@@ -7,6 +7,13 @@ type LifeImage = {
   alt?: string
 }
 
+type LifeVideo = {
+  src: string
+  title?: string
+  poster?: string
+  type?: string
+}
+
 type LifePost = {
   date: string
   time?: string
@@ -15,6 +22,8 @@ type LifePost = {
   mood?: string
   text: string[]
   images?: LifeImage[]
+  videos?: LifeVideo[]
+  imageMode?: 'cards'
   layout?: 'portrait' | 'wide'
   tags?: string[]
 }
@@ -27,11 +36,17 @@ const props = withDefaults(defineProps<{
 
 const previewImages = ref<LifeImage[]>([])
 const previewIndex = ref(0)
+const cardIndexes = ref<Record<string, number>>({})
 const touchStartX = ref(0)
 const touchStartY = ref(0)
 const touchLastX = ref(0)
 const touchLastY = ref(0)
 const isTouchingPreview = ref(false)
+const cardTouchKey = ref('')
+const cardTouchStartX = ref(0)
+const cardTouchStartY = ref(0)
+const cardTouchLastX = ref(0)
+const cardTouchLastY = ref(0)
 
 const currentPreview = computed(() => previewImages.value[previewIndex.value])
 
@@ -54,6 +69,10 @@ function formatDay(date: string) {
   return parts.length === 3 ? `${parts[1]}.${parts[2]}` : date
 }
 
+function postKey(post: LifePost) {
+  return `${post.date}-${post.time || ''}-${post.title || post.text[0] || ''}`
+}
+
 function imageClass(post: LifePost) {
   const count = post.images?.length ?? 0
   const layout = post.layout
@@ -61,6 +80,63 @@ function imageClass(post: LifePost) {
   if (count <= 1) return 'one'
   if (count === 2) return ['two', layout]
   return ['grid', layout]
+}
+
+function cardIndex(post: LifePost) {
+  const count = post.images?.length ?? 0
+  if (!count) return 0
+
+  const current = cardIndexes.value[postKey(post)] ?? 0
+  return current >= 0 && current < count ? current : 0
+}
+
+function showCard(post: LifePost, index: number) {
+  const count = post.images?.length ?? 0
+  if (!count) return
+
+  cardIndexes.value[postKey(post)] = (index + count) % count
+}
+
+function showPrevCard(post: LifePost) {
+  showCard(post, cardIndex(post) - 1)
+}
+
+function showNextCard(post: LifePost) {
+  showCard(post, cardIndex(post) + 1)
+}
+
+function cardSlideClass(post: LifePost, index: number) {
+  const active = cardIndex(post)
+  const count = post.images?.length ?? 0
+
+  if (index === active) return 'active'
+  if (count === 2) return 'next'
+  if (index === (active + 1) % count) return 'next'
+  if (index === (active - 1 + count) % count) return 'prev'
+  return 'hidden'
+}
+
+function handleCardClick(post: LifePost, image: LifeImage, index: number) {
+  if (index !== cardIndex(post)) {
+    showCard(post, index)
+    return
+  }
+
+  openPreview(image)
+}
+
+function handleCardKeydown(event: KeyboardEvent, post: LifePost) {
+  if ((post.images?.length ?? 0) <= 1) return
+
+  if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+    event.preventDefault()
+    showPrevCard(post)
+  }
+
+  if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+    event.preventDefault()
+    showNextCard(post)
+  }
 }
 
 function openPreview(image: LifeImage) {
@@ -95,6 +171,14 @@ function resetPreviewTouch() {
   touchStartY.value = 0
   touchLastX.value = 0
   touchLastY.value = 0
+}
+
+function resetCardTouch() {
+  cardTouchKey.value = ''
+  cardTouchStartX.value = 0
+  cardTouchStartY.value = 0
+  cardTouchLastX.value = 0
+  cardTouchLastY.value = 0
 }
 
 function handlePreviewTouchStart(event: TouchEvent) {
@@ -132,6 +216,43 @@ function handlePreviewTouchEnd() {
   if (absX < 44 || absX < absY * 1.2) return
   if (deltaX > 0) showPrev()
   else showNext()
+}
+
+function handleCardTouchStart(event: TouchEvent, post: LifePost) {
+  if ((post.images?.length ?? 0) <= 1 || event.touches.length !== 1) return
+
+  const touch = event.touches[0]
+  cardTouchKey.value = postKey(post)
+  cardTouchStartX.value = touch.clientX
+  cardTouchStartY.value = touch.clientY
+  cardTouchLastX.value = touch.clientX
+  cardTouchLastY.value = touch.clientY
+}
+
+function handleCardTouchMove(event: TouchEvent) {
+  if (!cardTouchKey.value || event.touches.length !== 1) return
+
+  const touch = event.touches[0]
+  cardTouchLastX.value = touch.clientX
+  cardTouchLastY.value = touch.clientY
+}
+
+function handleCardTouchEnd(post: LifePost) {
+  if (cardTouchKey.value !== postKey(post)) {
+    resetCardTouch()
+    return
+  }
+
+  const deltaX = cardTouchLastX.value - cardTouchStartX.value
+  const deltaY = cardTouchLastY.value - cardTouchStartY.value
+  const absX = Math.abs(deltaX)
+  const absY = Math.abs(deltaY)
+
+  resetCardTouch()
+
+  if (absX < 38 || absX < absY * 1.15) return
+  if (deltaX > 0) showPrevCard(post)
+  else showNextCard(post)
 }
 
 function handlePreviewKeydown(event: KeyboardEvent) {
@@ -192,7 +313,55 @@ onBeforeUnmount(() => {
               </div>
 
               <div
-                v-if="post.images?.length"
+                v-if="post.imageMode === 'cards' && post.images?.length"
+                class="life-image-cards"
+                tabindex="0"
+                aria-label="照片卡牌"
+                @keydown="handleCardKeydown($event, post)"
+                @touchstart.passive="handleCardTouchStart($event, post)"
+                @touchmove.passive="handleCardTouchMove"
+                @touchend="handleCardTouchEnd(post)"
+                @touchcancel="resetCardTouch"
+              >
+                <div class="life-card-stage">
+                  <button
+                    v-for="(image, index) in post.images"
+                    :key="`${image.src}-${index}`"
+                    type="button"
+                    class="life-card-slide"
+                    :class="cardSlideClass(post, index)"
+                    @click="handleCardClick(post, image, index)"
+                  >
+                    <img :src="withBase(image.src)" :alt="image.alt || post.title || '生活照片'" loading="lazy" />
+                  </button>
+                </div>
+
+                <button
+                  v-if="post.images.length > 1"
+                  class="life-card-nav prev"
+                  type="button"
+                  aria-label="上一张"
+                  @click="showPrevCard(post)"
+                >
+                  ‹
+                </button>
+                <button
+                  v-if="post.images.length > 1"
+                  class="life-card-nav next"
+                  type="button"
+                  aria-label="下一张"
+                  @click="showNextCard(post)"
+                >
+                  ›
+                </button>
+
+                <div v-if="post.images.length > 1" class="life-card-count">
+                  {{ cardIndex(post) + 1 }} / {{ post.images.length }}
+                </div>
+              </div>
+
+              <div
+                v-else-if="post.images?.length"
                 class="life-images"
                 :class="imageClass(post)"
               >
@@ -204,6 +373,20 @@ onBeforeUnmount(() => {
                 >
                   <img :src="withBase(image.src)" :alt="image.alt || post.title || '生活照片'" loading="lazy" />
                 </button>
+              </div>
+
+              <div v-if="post.videos?.length" class="life-videos">
+                <figure v-for="(video, index) in post.videos" :key="`${video.src}-${index}`" class="life-video">
+                  <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                    :poster="video.poster ? withBase(video.poster) : undefined"
+                  >
+                    <source :src="withBase(video.src)" :type="video.type || 'video/mp4'">
+                  </video>
+                  <figcaption v-if="video.title">{{ video.title }}</figcaption>
+                </figure>
               </div>
 
               <div v-if="post.tags?.length" class="life-tags">
@@ -402,22 +585,23 @@ onBeforeUnmount(() => {
   display: grid;
   gap: 6px;
   margin-top: 16px;
-  width: min(100%, 620px);
+  width: min(100%, 520px);
 }
 
 .life-images.one {
   grid-template-columns: minmax(0, 1fr);
-  width: min(100%, 520px);
+  width: fit-content;
+  max-width: min(100%, 400px);
 }
 
 .life-images.two {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  width: min(100%, 620px);
+  width: min(100%, 520px);
 }
 
 .life-images.two.wide {
   grid-template-columns: minmax(0, 1fr);
-  width: min(100%, 700px);
+  width: min(100%, 560px);
 }
 
 .life-images.grid {
@@ -437,6 +621,8 @@ onBeforeUnmount(() => {
 
 .life-images.one button {
   aspect-ratio: auto;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .life-images.two button {
@@ -459,14 +645,163 @@ onBeforeUnmount(() => {
 }
 
 .life-images.one img {
+  width: auto;
   height: auto;
-  max-height: 720px;
+  max-width: min(100%, 400px);
+  max-height: 460px;
   object-fit: contain;
 }
 
 .life-images.wide img {
   height: auto;
   object-fit: contain;
+}
+
+.life-image-cards {
+  position: relative;
+  width: min(100%, 430px);
+  margin-top: 16px;
+  padding: 0 34px 28px 0;
+  outline: none;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.life-image-cards:focus-visible {
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px var(--vp-c-brand-1);
+}
+
+.life-card-stage {
+  position: relative;
+  aspect-ratio: 4 / 4.7;
+  isolation: isolate;
+}
+
+.life-card-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 9px;
+  background: var(--vp-c-bg-mute);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+  cursor: zoom-in;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    filter 0.22s ease;
+}
+
+.life-card-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-user-drag: none;
+}
+
+.life-card-slide.active {
+  z-index: 3;
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotate(-0.4deg);
+}
+
+.life-card-slide.next,
+.life-card-slide.prev,
+.life-card-slide.hidden {
+  pointer-events: auto;
+}
+
+.life-card-slide.next {
+  z-index: 2;
+  opacity: 0.54;
+  transform: translate3d(22px, 18px, 0) rotate(2.2deg) scale(0.965);
+  cursor: pointer;
+  filter: saturate(0.9) brightness(0.92);
+}
+
+.life-card-slide.prev {
+  z-index: 1;
+  opacity: 0.28;
+  transform: translate3d(-12px, 14px, 0) rotate(-2deg) scale(0.945);
+  cursor: pointer;
+  filter: saturate(0.82) brightness(0.86);
+}
+
+.life-card-slide.hidden {
+  z-index: 0;
+  opacity: 0;
+  transform: translate3d(28px, 20px, 0) scale(0.94);
+  pointer-events: none;
+}
+
+.life-card-nav {
+  position: absolute;
+  top: calc((100% - 28px) / 2);
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 44px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  color: var(--vp-c-text-1);
+  background: color-mix(in srgb, var(--vp-c-bg) 82%, transparent);
+  backdrop-filter: blur(10px);
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.life-card-nav.prev {
+  left: -14px;
+}
+
+.life-card-nav.next {
+  right: 14px;
+}
+
+.life-card-count {
+  position: absolute;
+  right: 40px;
+  bottom: 0;
+  color: var(--vp-c-text-3);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.life-videos {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  width: min(100%, 360px);
+}
+
+.life-video {
+  margin: 0;
+}
+
+.life-video video {
+  display: block;
+  width: 100%;
+  max-height: 540px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 7px;
+  background: var(--vp-c-bg-mute);
+  object-fit: contain;
+}
+
+.life-video figcaption {
+  margin-top: 8px;
+  color: var(--vp-c-text-3);
+  font-size: 0.86rem;
+  line-height: 1.6;
 }
 
 .life-time-row {
@@ -630,8 +965,33 @@ onBeforeUnmount(() => {
 
   .life-images,
   .life-images.one,
-  .life-images.two {
+  .life-images.two,
+  .life-image-cards {
     width: 100%;
+  }
+
+  .life-videos {
+    width: min(100%, 330px);
+  }
+
+  .life-image-cards {
+    padding-right: 22px;
+  }
+
+  .life-card-slide img {
+    height: 100%;
+  }
+
+  .life-card-slide.next {
+    transform: translate3d(14px, 14px, 0) rotate(2deg) scale(0.965);
+  }
+
+  .life-card-nav {
+    display: none;
+  }
+
+  .life-card-count {
+    right: 28px;
   }
 
   .life-preview {
