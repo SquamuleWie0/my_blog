@@ -9,6 +9,18 @@ import LifeFeed from '../.vitepress/theme/components/LifeFeed.vue'
 
 const posts = [
   {
+    date: '2026-07-29',
+    time: '21:31',
+    text: [
+      '追求平淡的野心，我想需要我给自己真正的底气，拥有属于我的资本。',
+      '赋予自己想要的一切。',
+      '我也不想让每天都度过的跟打仗一样。',
+      '把它从火，养成水。',
+      '',
+      '疲惫的人们，晚安。'
+    ]
+  },
+  {
     date: '2026-07-27',
     time: '20:06',
     text: [

@@ -571,14 +571,14 @@ onBeforeUnmount(() => {
 
 .life-text {
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
 .life-text p {
   margin: 0 !important;
   color: var(--vp-c-text-1) !important;
   font-size: 1.12rem;
-  line-height: 1.88 !important;
+  line-height: 1.62 !important;
 }
 
 .life-images {
