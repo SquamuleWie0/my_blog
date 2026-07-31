@@ -2,6 +2,8 @@ node_modules
 docs/.vitepress/dist
 docs/.vitepress/cache
 .DS_Store
+__pycache__/
+*.py[cod]
 
 # 本地备份和临时文件
 docs/guide_backup_*

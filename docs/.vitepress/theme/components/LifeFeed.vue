@@ -15,6 +15,7 @@ type LifeVideo = {
 }
 
 type LifePost = {
+  id?: string
   date: string
   time?: string
   title?: string
@@ -30,9 +31,19 @@ type LifePost = {
 
 const props = withDefaults(defineProps<{
   posts?: LifePost[]
+  showHeader?: boolean
+  editable?: boolean
+  selectedId?: string
 }>(), {
-  posts: () => []
+  posts: () => [],
+  showHeader: true,
+  editable: false,
+  selectedId: ''
 })
+
+const emit = defineEmits<{
+  (event: 'edit', post: LifePost): void
+}>()
 
 const previewImages = ref<LifeImage[]>([])
 const previewIndex = ref(0)
@@ -69,8 +80,15 @@ function formatDay(date: string) {
   return parts.length === 3 ? `${parts[1]}.${parts[2]}` : date
 }
 
+function mediaSrc(src: string) {
+  if (/^(blob:|data:|https?:)/.test(src)) return src
+  const base = withBase('/')
+  if (src.startsWith(base)) return src
+  return withBase(src.startsWith('/') ? src : `/${src}`)
+}
+
 function postKey(post: LifePost) {
-  return `${post.date}-${post.time || ''}-${post.title || post.text[0] || ''}`
+  return post.id || `${post.date}-${post.time || ''}-${post.title || post.text[0] || ''}`
 }
 
 function imageClass(post: LifePost) {
@@ -285,7 +303,7 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="life-feed">
-    <header class="life-head">
+    <header v-if="showHeader" class="life-head">
       <h1>途中</h1>
     </header>
 
@@ -294,8 +312,13 @@ onBeforeUnmount(() => {
         <div class="life-month-label">{{ group.month }}</div>
 
         <div class="life-month-posts">
-          <article v-for="post in group.posts" :key="`${post.date}-${post.title || post.text[0]}`" class="life-post">
-            <img class="life-avatar" :src="withBase('/life/avatar.jpg')" alt="wie0 的头像" loading="lazy">
+          <article
+            v-for="post in group.posts"
+            :key="postKey(post)"
+            class="life-post"
+            :class="{ selected: editable && post.id === selectedId }"
+          >
+            <img class="life-avatar" :src="mediaSrc('/life/avatar.jpg')" alt="wie0 的头像" loading="lazy">
 
             <div class="life-card">
               <div class="life-meta">
@@ -304,6 +327,14 @@ onBeforeUnmount(() => {
                 <em v-if="post.place">{{ post.place }}</em>
                 <i v-if="post.place && post.mood">/</i>
                 <em v-if="post.mood">{{ post.mood }}</em>
+                <button
+                  v-if="editable"
+                  class="life-edit-button"
+                  type="button"
+                  @click="emit('edit', post)"
+                >
+                  编辑
+                </button>
               </div>
 
               <h2 v-if="post.title">{{ post.title }}</h2>
@@ -332,7 +363,7 @@ onBeforeUnmount(() => {
                     :class="cardSlideClass(post, index)"
                     @click="handleCardClick(post, image, index)"
                   >
-                    <img :src="withBase(image.src)" :alt="image.alt || post.title || '生活照片'" loading="lazy" />
+                    <img :src="mediaSrc(image.src)" :alt="image.alt || post.title || '生活照片'" loading="lazy" />
                   </button>
                 </div>
 
@@ -371,7 +402,7 @@ onBeforeUnmount(() => {
                   type="button"
                   @click="openPreview(image)"
                 >
-                  <img :src="withBase(image.src)" :alt="image.alt || post.title || '生活照片'" loading="lazy" />
+                  <img :src="mediaSrc(image.src)" :alt="image.alt || post.title || '生活照片'" loading="lazy" />
                 </button>
               </div>
 
@@ -381,9 +412,9 @@ onBeforeUnmount(() => {
                     controls
                     playsinline
                     preload="metadata"
-                    :poster="video.poster ? withBase(video.poster) : undefined"
+                    :poster="video.poster ? mediaSrc(video.poster) : undefined"
                   >
-                    <source :src="withBase(video.src)" :type="video.type || 'video/mp4'">
+                    <source :src="mediaSrc(video.src)" :type="video.type || 'video/mp4'">
                   </video>
                   <figcaption v-if="video.title">{{ video.title }}</figcaption>
                 </figure>
@@ -426,7 +457,7 @@ onBeforeUnmount(() => {
         >
           ‹
         </button>
-        <img :src="withBase(currentPreview.src)" :alt="currentPreview.alt || '生活照片预览'">
+        <img :src="mediaSrc(currentPreview.src)" :alt="currentPreview.alt || '生活照片预览'">
         <button
           v-if="previewImages.length > 1"
           class="life-preview-nav next"
@@ -508,6 +539,15 @@ onBeforeUnmount(() => {
   border-bottom: 1px solid var(--vp-c-divider);
 }
 
+.life-post.selected {
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--vp-c-brand-1) 7%, transparent);
+}
+
+.life-post.selected .life-card {
+  padding-right: 12px;
+}
+
 .life-post::before {
   content: "";
   position: absolute;
@@ -558,6 +598,23 @@ onBeforeUnmount(() => {
 .life-meta i,
 .life-meta em {
   font-style: normal;
+}
+
+.life-edit-button {
+  margin-left: auto;
+  min-height: 30px;
+  padding: 0 13px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-soft);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.life-edit-button:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
 }
 
 .life-card h2 {
