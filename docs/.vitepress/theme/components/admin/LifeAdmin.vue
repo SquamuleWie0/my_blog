@@ -96,6 +96,7 @@ const managePreviewPosts = computed(() => {
 
   return posts.value.map((post) => (post.id === preview.id ? preview : post))
 })
+const manageFeedKey = computed(() => `${selectedPostId.value}:${editDate.value}:${editTime.value}:${editText.value}`)
 const editorTitle = computed(() => editLines.value.find((line) => line.trim()) || '生活记录')
 const publishPreviewPost = computed<LifePostRecord>(() => {
   const images = assets.value
@@ -177,13 +178,15 @@ async function loginWithSecret() {
     })
 
     const result = await response.json().catch(() => ({}))
+    if (response.status === 404) throw new Error('发布服务未连接：/api/admin 没有代理到后端')
     if (!response.ok) throw new Error(result.detail || '解锁失败')
 
     password.value = ''
     statusMessage.value = result.message || '已进入控制台'
     await checkAuth()
   } catch (error) {
-    errorMessage.value = error instanceof Error ? error.message : '解锁失败'
+    const message = error instanceof Error ? error.message : '解锁失败'
+    errorMessage.value = message === 'Failed to fetch' ? '发布服务未连接：请先启动 admin-api 或配置 /api/admin 代理' : message
   } finally {
     isLoggingIn.value = false
   }
@@ -648,6 +651,7 @@ onBeforeUnmount(() => {
 
           <div v-if="posts.length" class="manage-feed-shell">
             <LifeFeed
+              :key="manageFeedKey"
               class="admin-manage-feed"
               :posts="managePreviewPosts"
               :show-header="false"
