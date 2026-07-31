@@ -78,6 +78,25 @@ const textLines = computed(() => text.value.split('\n'))
 const canPublish = computed(() => authenticated.value && text.value.trim() && !isPublishing.value)
 const selectedPost = computed(() => posts.value.find((post) => post.id === selectedPostId.value))
 const currentPreview = computed(() => previewImages.value[previewIndex.value])
+const editLines = computed(() => editText.value.split('\n'))
+const editedPostPreview = computed<LifePostRecord | undefined>(() => {
+  const post = selectedPost.value
+  if (!post) return undefined
+
+  return {
+    ...post,
+    date: editDate.value || post.date,
+    time: editTime.value,
+    text: editLines.value
+  }
+})
+const managePreviewPosts = computed(() => {
+  const preview = editedPostPreview.value
+  if (!preview) return posts.value
+
+  return posts.value.map((post) => (post.id === preview.id ? preview : post))
+})
+const editorTitle = computed(() => editLines.value.find((line) => line.trim()) || '生活记录')
 const publishPreviewPost = computed<LifePostRecord>(() => {
   const images = assets.value
     .filter((asset) => asset.type === 'image')
@@ -436,8 +455,16 @@ async function saveSelectedPost() {
     const result = await response.json().catch(() => ({}))
     if (!response.ok) throw new Error(result.detail || '保存失败')
 
+    const updatedPost: LifePostRecord = {
+      ...post,
+      date: editDate.value,
+      time: editTime.value,
+      text: editLines.value
+    }
+    posts.value = posts.value.map((item) => (item.id === post.id ? updatedPost : item))
+    selectedPostId.value = post.id
+    activePanel.value = 'manage'
     manageMessage.value = result.message || '已保存'
-    await fetchPosts()
   } catch (error) {
     manageMessage.value = error instanceof Error ? error.message : '保存失败'
   } finally {
@@ -622,7 +649,7 @@ onBeforeUnmount(() => {
           <div v-if="posts.length" class="manage-feed-shell">
             <LifeFeed
               class="admin-manage-feed"
-              :posts="posts"
+              :posts="managePreviewPosts"
               :show-header="false"
               editable
               :selected-id="selectedPostId"
@@ -638,7 +665,7 @@ onBeforeUnmount(() => {
             <div class="panel-head">
               <div>
                 <p class="preview-label">编辑</p>
-                <h2>{{ selectedPost.text[0] || '生活记录' }}</h2>
+                <h2>{{ editorTitle }}</h2>
               </div>
               <span v-if="selectedPostMediaCount" class="service-pill">{{ selectedPostMediaCount }} 个素材</span>
             </div>
